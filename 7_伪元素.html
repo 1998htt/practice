@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            #div1{
+                width:300px;
+            }
+            #div1::after{
+                content: "";
+                width:0px;
+                border:10px solid transparent;
+                border-top-color: blue;
+
+            }
+            /*#div1::before{*/
+                /*content: "";*/
+                /*width:0px;*/
+                /*border:10px solid transparent;*/
+                /*border-top-color: blue;*/
+            /*}*/
+            #div1::after {
+                content: "";
+                width: 150px;
+                border: 10px solid transparent;
+                border-top-color: blue;
+            }
+            #div1::selection{
+                color:yellow;
+                background: black;
+            }
+            #div1::first-line{
+                color:#00ff00;
+            }
+            #div1::first-letter{
+                  color:red;
+              }
+
+        </style>
+    </head>
+    <body>
+       <div id="div1">
+           我去窘境哦对对囧囧武侯祠返回阿欧式风格哇<br/>
+           <input type="text" placeholder="哈哈哈">
+           <span>百度一下</span>
+       </div>
+    </body>
+</html>
