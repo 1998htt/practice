@@ -1,0 +1,126 @@
+#header{
+    background: #f2f2f2;
+    color:#ffffff;
+    font-weight: 100;
+    font: 12px/1.5 tahoma,arial,"\5b8b\4f53";
+
+}
+#search{
+    background: #ff0036;
+    height: 32px;
+}
+#login-contain{
+    float:left;
+    line-height: 32px;
+}
+#login-contain a{
+    color:#ffffff;
+    padding-left:20px;
+}
+#header-menu .menu{
+    float: left;
+    line-height:32px;
+    padding:0 10px;
+}
+#header-menu{
+    float:right;
+}
+#header-menu a {
+    color: #ffffff;
+}
+#header-menu .menu-tr .icon-wangzhandaohang{
+    font-size: 14px;
+ }
+#header-menu .menu-nav .icon-shoujiban{
+    font-size: 12px;
+}
+#header-menu .menu-nav .icon-gouwuche{
+    font-size: 13px;
+}
+#header-menu .menu-tr::after{
+    content: '';
+    width:0;
+    border:4px solid transparent;
+    border-top-color:#bbbbbb;
+    position: absolute;
+    right:1px;
+    top:16px;
+    transform-origin: 4px 2px;
+}
+#header-menu .menu-tr {
+    position: relative;
+}
+#header-menu .menu-tr:hover::after{
+    transition:transform .2s linear;
+    transform:rotate(180deg);
+}
+#header-menu .menu-nav:hover a{
+    color:yellow;
+}
+#header-menu .menu-tr:hover {
+    background:#fffdef;
+}
+#header-menu .menu-tr:hover>a{
+    color:red;
+    text-decoration: underline;
+}
+#header-menu .menu-tr:hover .sub-menu{
+    display: block;
+}
+#header-menu .menu-tr a:hover{
+    color:red;
+    text-decoration:underline;
+}
+#header-menu .menu-nav:hover .iconfont{
+    color:yellow;
+}
+#header-menu .menu-nav:hover span{
+    color:white;
+}
+#header-menu .menu-nav a:hover span{
+    color:yellow;
+}
+#header-menu .menu-tr:hover .iconfont{
+    color:red;
+}
+#header-menu .menu-tr:hover .sub-menu1 {
+    display: block;
+}
+#header-menu .sub-menu {
+    /*border: 1px solid #ccc;*/
+    /*border-top: 0;*/
+    position: absolute;
+    top:32px;
+    left:0;
+    width: 100px;
+    display: none;
+}
+#header-menu .sub-menu li{
+    padding :0 10px;
+}
+#header-menu .sub-menu a{
+    color:#999;
+}
+#header-menu .sub-menu1 a{
+    color:#999;
+}
+#header-menu .sub-menu1{
+    position :absolute;
+    top:32px;
+    left:0;
+    width:100px;
+    display:none;
+ }
+ #header-menu .sub-menu1{
+     padding:0 10px;
+ }
+ #header-menu .sub-menu2-1 a{
+     color:#999;
+ }
+#header-menu .sub-menu2-1 strong{
+    color:black;
+}
+#header-menu .menu-tr .sub-menu2-2{
+    float:left;
+}
+
