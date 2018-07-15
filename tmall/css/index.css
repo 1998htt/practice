@@ -1,13 +1,13 @@
 #header{
-    background: #f2f2f2;
+    background: #ff0036;
     color:#ffffff;
     font-weight: 100;
     font: 12px/1.5 tahoma,arial,"\5b8b\4f53";
-
+    height: 32px;
 }
 #search{
-    background: #ff0036;
-    height: 32px;
+
+    height: 130px;
 }
 #login-contain{
     float:left;
@@ -25,7 +25,7 @@
 #header-menu{
     float:right;
 }
-#header-menu a {
+#header-menu .menu>a {
     color: #ffffff;
 }
 #header-menu .menu-tr .icon-wangzhandaohang{
@@ -86,7 +86,7 @@
 #header-menu .menu-tr:hover .sub-menu1 {
     display: block;
 }
-#header-menu .sub-menu {
+#header-menu .sub-menu a{
     /*border: 1px solid #ccc;*/
     /*border-top: 0;*/
     position: absolute;
@@ -94,6 +94,8 @@
     left:0;
     width: 100px;
     display: none;
+    z-index: 100;
+    background: #ffffff;
 }
 #header-menu .sub-menu li{
     padding :0 10px;
@@ -110,17 +112,221 @@
     left:0;
     width:100px;
     display:none;
- }
+    z-index:100;
+    background: #ffffff;
+}
  #header-menu .sub-menu1{
      padding:0 10px;
  }
- #header-menu .sub-menu2-1 a{
-     color:#999;
+ #header-menu .menu-tr .sub-menu2{
+     color: #cccccc;
+     position :absolute;
+     top:32px;
+     left:0;
+     width:100px;
+
+     z-index:100;
  }
-#header-menu .sub-menu2-1 strong{
-    color:black;
+#header-menu .menu-tr .sub-menu2{
+    color: #cccccc;
+    position :absolute;
+    top:32px;
+    left:0;
+    width:100px;
+
+    z-index:100;
 }
-#header-menu .menu-tr .sub-menu2-2{
+#header-menu .menu-tr .sub-menu2 {
+    color: #cccccc;
+    position :absolute;
+    top:32px;
+    left:0;
+    width:100px;
+
+    z-index:100;
+}
+#search-contain{
+    float: left;
+    margin-top: 40px;
+    margin-left: 90px;
+}
+#search img{
+    float:left;
+    width:240px;
+}
+#search-contain .search-list li{
+    float: left;
+    color:#cccccc;
+}
+#search-contain .search-input{
+    border: 2px solid #ff2736;
+    height: 36px;
+}
+#search-contain .search-input input{
+    width: 490px;
+    height: 36px;
+    outline: none;
+    border: 0;
+    float: left;
+    text-indent: 10px;
+}
+#search-contain .search-input input::placeholder{
+    color:#ccc;
+    font-size: 18px;
+}
+#search-contain .search-input button{
+    width: 132px;
+    height: 36px;
+    border: 0;
+    background: #ff2736;
+    color:#fff;
+    font-size: 18px;
+    outline: none;
+    float: left;
+}
+#search-contain .search-list li {
+    margin-top: 5px;
+    padding: 0px 12px;
+    border-right: 1px solid #ccc;
+}
+#search-contain .search-list li a {
+    color:#ccc;
+    font-size:14px;
+}
+#search-contain .search-list li.first{
+   padding-left:0px;
+}
+#search-contain .search-list li.last{
+    border-right:0px;
+}
+#search-contain .search-list li.red a{
+    color: #ff0000;
+}
+#main-menu{
+    margin-left:400px;
+    height:30px;
+}
+#main-menu img{
+    width:100px;
+    float:left;
+    margin-right: 16px;
+}
+#main-menu .list li{
     float:left;
 }
+#main-menu .list li{
+    padding-right:16px;
+    margin-top:5px;
+}
+#main-menu .list a{
+    color:#333333;
+}
+#main-menu .list a:hover{
+    color: #ff0000;
+}
+#banner{
+    position: relative;
+    border-top:2px solid #f00;
+}
+#banner li a img{
+    width: 100%;
+}
+#banner .picture a{
+    display:block;
+    width:1230px;
+    margin: 0 auto;
+}
+#banner .guide{
+    position: absolute;
+    margin-left:28px;
+    background:rgba(0,0,0,.5) ;
 
+
+}
+#banner .guide>li{
+    line-height:31px;
+    width:200px;
+    height:32.8px;
+}
+#banner .guide>li>a{
+    color:#ffffff;
+}
+#banner .guide>li:hover{
+    background: #ffffff;
+}
+#banner .guide .color1:hover>a,#banner .guide .color1:hover i{
+    color:#ff2736;
+}
+#banner .guide .color2:hover>a,#banner .guide .color2:hover i{
+    color:#0086b3;
+}
+#banner .guide .color3:hover>a,#banner .guide .color3:hover i{
+    color:mediumpurple;
+}
+#banner .guide .color4:hover>a,#banner .guide .color4:hover i{
+    color:hotpink;
+}
+#banner .guide .color5:hover>a,#banner .guide .color5:hover i{
+    color:yellow;
+}
+#banner .guide .color6:hover>a,#banner .guide .color6:hover i{
+    color:#ff0036;
+}
+#banner .title{
+    position:absolute;
+    margin-left:28px;
+    margin-top:-32px;
+    padding-left:30px;
+    background: #ff2736;
+    width:170px;
+    line-height:30px;
+    color:#ffffff;
+}
+#banner .guide li i{
+    color:#ffffff;
+    margin:0 8px 0 10px;
+
+}
+#banner .banner-menu{
+    position: absolute;
+    left:200px;
+    top:0px;
+    width:852px;
+    height: 522px;
+    background: #ffffff;
+    /*display:none;*/
+}
+#banner .menu-left{
+    width:693px;
+    height:522px;
+}
+#banner .banner-menu .banner-menu-head{
+    float:left;
+    margin:0 10px;
+}
+#banner .banner-menu .banner-menu-list{
+    width: 493px;
+    float: left;
+    line-height: 16px;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #ccc;
+}
+#banner .banner-menu .banner-menu-list li{
+    float:left;
+    margin:2px 5px;
+
+}
+#banner .banner-menu .banner-menu-list li a {
+    font-size: 14px;
+    color:#cccccc;
+}
+#banner .guide>li:hover .banner-menu{
+    /*display:block;*/
+}
+#banner .banner-menu .menu-right{
+    float:right;
+    width:200px;
+    height:522px;
+    top:0px;
+}
