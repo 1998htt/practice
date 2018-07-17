@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            .five{
+                width:200px;
+                height:200px;
+                border:10px solid #000000;
+                border-radius: 50%;
+                position: absolute;
+            }
+            .blue{
+                border-color: blue;
+            }
+            .blue:after{
+                content:"" ;
+                width:200px;
+                height:200px;
+                border-radius: 50%;
+                position:absolute;
+                left:-10px;
+                top:-10px;
+                border:10px solid blue;
+                z-index:1;
+                border-bottom-color: transparent;
+            }
+            .black{
+                left:240px;
+            }
+            .black:after{
+                content:"" ;
+                width:200px;
+                height:200px;
+                border-radius: 50%;
+                position:absolute;
+                left:-10px;
+                top:-10px;
+                border:10px solid black;
+                z-index:1;
+                border-left-color: transparent;
+            }
+            .red{
+                border-color: red;
+                left:470px;
+            }
+            .red:after{
+                content:"" ;
+                width:200px;
+                height:200px;
+                border-radius: 50%;
+                position:absolute;
+                left:-10px;
+                top:-10px;
+                border:10px solid red;
+                z-index:1;
+                border-left-color: transparent;
+
+            }
+            .yellow{
+                border-color:yellow;
+                left:120px;
+                top:130px;
+            }
+            .green{
+                border-color: green;
+                left:350px;
+                top:130px;
+            }
+            .green:after{
+                content:"" ;
+                width:200px;
+                height:200px;
+                border-radius: 50%;
+                position:absolute;
+                left:-10px;
+                top:-10px;
+                border:10px solid green;
+                z-index:2;
+                border-top-color: transparent;
+                border-right-color: transparent;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="five blue">
+
+        </div>
+        <div  class="five black">
+
+        </div>
+        <div  class="five red">
+
+        </div>
+        <div  class="five yellow">
+
+        </div>
+        <div  class="five green">
+
+        </div>
+
+    </body>
+</html>
