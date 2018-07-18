@@ -543,8 +543,6 @@
     margin:0 auto;
     display: block;
     margin-top:6px;
-
-
 }
 #price .three.spe{
     margin-top:14px;
@@ -561,4 +559,62 @@
     height: 40px;
     margin:8px auto;
 }
+#floor{
+    background: #f5f5f5;
+}
+#floor .wapper{
+    height:665px;
+    margin-top:10px;
+}
+#floor .floor-list {
+    height: 45px;
+}
+#floor .floor-list img{
+    width:214px;
+    height:25px;
+    float:left;
+    margin-top:10px;
+}
+#floor .floor-list li{
+    float:right;
+}
+#floor .floor-list li a{
+    color: #000000;
+    width:28px;
+    height:21px;
+    margin:0 10px;
+    line-height: 45px;
+    font-size:14px;
 
+}
+#floor .floor-list li a:hover{
+    border-bottom:1px solid #000000;
+}
+#floor .wrap{
+    width: 234px;
+    height: 300px;
+    float:left;
+    margin-left: 10px;
+    margin-top:4px;
+    background: #ffffff;
+    border:1px solid #ffffff;
+}
+#floor .wrap:hover{
+    border-color: #ff0000;
+}
+#floor .wrap1{
+    width:235px;
+    height: 302px;
+    float:left;
+    margin-top:4px;
+}
+#floor .wrap1 img{
+    width:235px;
+    height: 302px;
+}
+#floor .wrap img{
+    display:block;
+    width: 185px;
+    height: 185px;
+    margin:0 auto;
+}
