@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>菜单</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+            #menu{
+                width:120px;
+                border:1px solid #000;
+                display:none;
+                position:absolute;
+            }
+            li{
+                list-style: none;
+                text-align: center;
+                height:30px;
+                border-bottom:1px solid #cccccc;
+                line-height:30px;
+            }
+            li:last-child{
+                border-bottom:0px;
+            }
+        </style>
+    </head>
+    <body>
+       <ul id="menu">
+           <li>打开</li>
+           <li>下载</li>
+           <li>复制</li>
+           <li>删除</li>
+           <li>设置</li>
+       </ul>
+       <div>
+           <div>
+
+           </div>
+       </div>
+       <script>
+           var oMenu=document.getElementById('menu');
+           document.oncontextmenu=function(e){
+               oMenu.style.left=e.clientX+'px';
+               oMenu.style.top=e.clientY+'px';
+               oMenu.style.display='block';
+               return false;
+           }
+           document.onclick=function(){
+               oMenu.style.display='none';
+           }
+       </script>
+    </body>
+</html>

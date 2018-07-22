@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+    <div id="div1">
+         我是div
+        <p>pppppppp</p>
+        <h>hhhhhhhh</h>
+    </div>
+        <script>
+            var div=document.getElementById('div1');
+            // console.log(div);
+            // var p=document.getElementsByTagName('p');
+            div.onclick=function(e) {
+                console.log(e.target);
+                console.log(e.currentTarget);
+                console.log(this);
+                if(e.target.tagName=='P'){
+                    console.log(1111);
+                }else{
+                    console.log(2222);
+                }
+
+            }
+        </script>
+
+    </body>
+</html>
