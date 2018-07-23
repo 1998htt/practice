@@ -51,20 +51,19 @@
      <script>
          var aA=document.getElementsByTagName('a');
          var aSubMenu=document.getElementsByClassName('sub-menu');
-         for(var i=0;i<aA.length;i++){
-             aA[i].index=i;
-             aA[i].onclick=function(){
-                 aSubMenu[this.index].style.display='block';
-                 return false;
-                 if( aSubMenu[this.index].style.display=='block'){
-                     aA[i].onclick=function(){
-                         aSubMenu[this.index].style.display='none';
-                         return false;
-                     }
+         for(var i=0;i<aA.length;i++) {
+             aA[i].index = i;
+             aA[i].onclick = function () {
+                 if( aSubMenu[this.index].style.display =='block'){
+                     aSubMenu[this.index].style.display = 'none';
+                 }else{
+                     aSubMenu[this.index].style.display = 'block';
                  }
-                 // return false;
+                 return false;
              }
+
          }
+
      </script>
     </body>
 </html>
