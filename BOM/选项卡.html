@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+            li{
+                list-style:none
+            }
+            #contain{
+                width:400px;
+                margin:100px auto;
+            }
+            #contain ul{
+                height: 20px;
+            }
+            #contain li{
+                float:left;
+                width:100px;
+                height: 20px;
+                margin-right:30px;
+                background: #cccccc;
+                color: #ffffff;
+                text-align: center;
+                line-height: 20px;
+            }
+            #contain div{
+                height:270px;
+                width: 400px;
+                border-top:1px solid #000000;
+                background: #cccccc;
+                position: absolute;
+                display:none
+            }
+            #contain .first{
+                background: #000000;
+            }
+            #contain .show{
+                display:block;
+            }
+        </style>
+    </head>
+    <body>
+       <div id="contain">
+           <ul>
+               <li class="first">1111</li>
+               <li>2222</li>
+               <li>3333</li>
+           </ul>
+           <div class="show">aaaa</div>
+           <div>bbbb</div>
+           <div>cccc</div>
+       </div>
+       <script>
+           var aLi=document.getElementsByTagName('li');
+           var oContain=document.getElementById("contain");
+           var aDiv=oContain.getElementsByTagName('div');
+           for(var i=0;i<aLi.length;i++){
+               aLi[i].index=i;
+               aLi[i].onclick=function(){
+                   for(var j=0;j<aLi.length;j++){
+                       aLi[j].className='';
+                       aDiv[j].className='';
+                   }
+                   this.className='first';
+                   aDiv[this.index].className='show';
+               }
+           }
+       </script>
+    </body>
+</html>

@@ -54,14 +54,21 @@
          for(var i=0;i<aA.length;i++) {
              aA[i].index = i;
              aA[i].onclick = function () {
-                 if( aSubMenu[this.index].style.display =='block'){
+                 if(getStyle(aSubMenu[this.index],'display') =='block'){
                      aSubMenu[this.index].style.display = 'none';
                  }else{
                      aSubMenu[this.index].style.display = 'block';
                  }
                  return false;
              }
-
+         }
+         //兼容性
+         function getStyle(elem,prop){
+             if(elem.currentStyle){
+                 return elem.currentStyle[prop];
+             }else{
+                 return getComputedStyle(elem,false)[prop];//标准浏览器
+             }
          }
 
      </script>
