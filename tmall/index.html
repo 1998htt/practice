@@ -933,8 +933,8 @@
                      </a>
                  </div>
                  <div class="two">
-                     <ul>
-                         <li>
+                     <ul id="shift">
+                         <li class="b">
                              <a href="">今日疯抢</a>
                          </li>
                          <li>
@@ -942,7 +942,8 @@
                          </li>
                      </ul>
                      <div class="two-1">
-                         <ul class="roll">
+                         <ul id="a" class="roll">
+                             <img class="hid" src="images/a20.jpg" alt="">
                              <img src="images/a8.jpg" alt="">
                          </ul>
                          <ul class="gui">
@@ -1106,7 +1107,24 @@
 
       </div>
 
-
+      <script>
+          var oUl=document.getElementById('shift');
+          var aLi=oUl.getElementsByTagName('li');
+          var oU=document.getElementById('a');
+          var aImg=oU.getElementsByTagName('img');
+          for(var i=0;i<aLi.length;i++){
+              aLi[i].index=i;
+              aLi[i].onmouseover=function(){
+                 // aImg[this.index].style.display= 'block';
+                  for(var j=0;j<aLi.length;j++){
+                      aLi[j].className='';
+                      aImg[j].className='';
+                  }
+                  this.className='b';
+                  aImg[this.index].className='hid';
+              }
+          }
+      </script>
 
 
     </body>

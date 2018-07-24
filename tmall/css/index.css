@@ -505,6 +505,10 @@
     float:right;
     margin-right:30px;
     margin-top:10px;
+    display:none;
+}
+#price .two .roll .hid{
+    display:block;
 }
 #price .two .gui{
     width:223px;
