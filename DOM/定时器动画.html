@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            div{
+                width: 200px;
+                height: 200px;
+                background: #ff2736;
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="flash"></div>
+        <script>
+            var oFlash=document.getElementById('flash');
+
+            var timer = setInterval(function(){
+                var w=getComputedStyle(oFlash,false).width;
+                var o=getComputedStyle(oFlash,false).opacity;
+               if(o<=0.1){
+                   oFlash.style.opacity=0;
+               }else{
+                   oFlash.style.opacity=o*0.8;
+               }
+               w=parseInt(w)+10;
+               if(w>=1000){
+                   oFlash.style.width='1000px';
+                   clearInterval(timer);
+               }else{
+                   oFlash.style.width=w+'px';
+               }
+            },50)
+        </script>
+    </body>
+</html>
