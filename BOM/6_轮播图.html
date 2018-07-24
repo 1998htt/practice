@@ -12,8 +12,8 @@
                 list-style:none;
             }
             #contain{
-                width: 520px;
-                height: 280px;
+                width: 720px;
+                height: 1080px;
                 margin:100px auto;
                 position: relative;
             }
@@ -40,6 +40,7 @@
                 text-align: center;
                 line-height: 20px;
                 margin-right:10px;
+                cursor: pointer;
             }
             #contain .nav .selected{
                 background: orange;
@@ -52,10 +53,10 @@
     <body>
         <div id="contain">
             <div class="imgs">
-                <img class="selected" src="img/1.jpg" alt="">
-                <img src="img/2.jpg" alt="">
-                <img src="img/3.jpg" alt="">
-                <img src="img/4.jpg" alt="">
+                <img class="selected" src="img/nn1.jpg" alt="">
+                <img src="img/nn2.jpg" alt="">
+                <img src="img/nn3.jpg" alt="">
+                <img src="img/nn4.jpg" alt="">
             </div>
             <ul class="nav">
                 <li class="selected">1</li>
@@ -64,23 +65,45 @@
                 <li>4</li>
             </ul>
           <div class="arrows">
-              <span>&lt</span>
-              <span>&gt</span>
+              <span id="pre">&lt</span>
+              <span id="next">&gt</span>
           </div>
         </div>
         <script>
             var aLi=document.getElementsByTagName('li');
             var aImg=document.getElementsByTagName('img');
+            var oPre=document.getElementById('pre');
+            var oNext=document.getElementById('next');
+            var nowIndex=0;
             for(var i=0;i<aLi.length;i++){
                 aLi[i].index=i;
                 aLi[i].onmouseover = function(){
-                    for(var j=0;j<aLi.length;j++){
-                        aLi[j].className='';
-                        aImg[j].className='';
-                    }
-                    this.className='selected';
-                    aImg[this.index].className='selected';
+                     nowIndex = this.index;
+                     changeImg(this.index);
                 }
+            }
+            oNext.onclick = function(){
+                nowIndex++;
+                if(nowIndex==aLi.length){
+                    nowIndex=0;
+                }
+                changeImg(nowIndex);
+            }
+            oPre.onclick = function(){
+                nowIndex--;
+                if(nowIndex==-1){
+                    nowIndex=aLi.length-1;
+                }
+               changeImg(nowIndex);
+
+            }
+            function changeImg(index){
+                for(var j=0;j<aLi.length;j++){
+                    aLi[j].className='';
+                    aImg[j].className='';
+                }
+                aLi[index].className='selected';
+                aImg[index].className='selected';
             }
         </script>
     </body>
