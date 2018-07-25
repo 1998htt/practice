@@ -22,16 +22,17 @@
                 var o=getComputedStyle(oFlash,false).opacity;
                if(o<=0.1){
                    oFlash.style.opacity=0;
+                   clearInterval(timer);
                }else{
                    oFlash.style.opacity=o*0.8;
                }
-               w=parseInt(w)+10;
-               if(w>=1000){
-                   oFlash.style.width='1000px';
-                   clearInterval(timer);
-               }else{
-                   oFlash.style.width=w+'px';
-               }
+               // w=parseInt(w)+10;
+               // if(w>=1000){
+               //     oFlash.style.width='1000px';
+               //     clearInterval(timer);
+               // }else{
+               //     oFlash.style.width=w+'px';
+               // }
             },50)
         </script>
     </body>
