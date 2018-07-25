@@ -17,7 +17,7 @@
                 margin:100px auto;
                 border:1px solid #000000;
                 position: relative;
-                /*overflow: hidden;*/
+                overflow: hidden;
             }
             #contain .scroll{
                 width:880px;
@@ -71,10 +71,11 @@
             var oRoll=document.getElementById('roll');
             var oLeft=document.getElementById('left');
             var oRight=document.getElementById('right');
+            var timer,timer1;
             function play(){
                timer=setInterval(function(){
                     l=getComputedStyle(oRoll,false).left;
-                    l=parseInt(l)-10;
+                    l=parseInt(l)-5;
                     if(l==(-oRoll.offsetWidth)/2){
                         oRoll.style.left=0;
                     }else{
@@ -83,17 +84,20 @@
                 },100);
 
             }
-            // play();
+            play();
             oLeft.onclick = function(){
+                clearInterval(timer1);
+
+                clearInterval(timer);
                 play();
             }
             function play1(){
                 timer1=setInterval(function(){
                     l=getComputedStyle(oRoll,false).left;
-                    l=l+(-430+'px');
-                    l=parseInt(l)+10;
-                    if(l==0){
-                        l=(-oRoll.offsetWidth)/2;
+                    l=parseInt(l)+5;
+                    if(l>0){
+                        oRoll.style.left=(-oRoll.offsetWidth)/2+'px';
+                        console.log(1111);
                     }else{
                         oRoll.style.left=l+'px';
                     }
@@ -101,8 +105,10 @@
             }
 
             oRight.onclick = function(){
+                clearInterval(timer1);
+                clearInterval(timer);
                 play1();
-                // clearInterval(timer);
+
             }
 
         </script>
