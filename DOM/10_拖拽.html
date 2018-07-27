@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            #div1{
+                width:200px;
+                height: 200px;
+                background: orange;
+                position:absolute;
+            }
+        </style>
+    </head>
+<body>
+  <div id="div1">
+
+  </div>
+  <script>
+     var oDiv=document.getElementById('div1');
+     oDiv.onmousedown = function(e){
+         oDiv.style.background='pink';
+         var l=oDiv.offsetLeft;
+         var t=oDiv.offsetTop;
+         var m=e.clientX-l;
+         var n=e.clientY-t;
+         document.onmousemove = function(e) {
+             var aleft=e.clientX-m;
+             var atop=e.clientY-n;
+             if(aleft>document.documentElement.offsetWidth - oDiv.offsetWidth){
+                 aleft=document.documentElement.offsetWidth - oDiv.offsetWidth;
+             }else if(aleft<0){
+                 aleft=0;
+             }
+             if(atop> window.innerHeight - oDiv.offsetHeight){
+                 atop= window.innerHeight - oDiv.offsetHeight;
+             }else if(atop<0){
+                 atop=0;
+             }
+             oDiv.style.left=aleft+'px';
+             oDiv.style.top=atop+'px';
+
+         }
+         oDiv.onmouseup = function(){
+            document.onmousemove=null;
+             oDiv.style.background='orange';
+         }
+     }
+
+
+  </script>
+</body>
+</html>
