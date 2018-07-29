@@ -5,7 +5,32 @@
         <title>Title</title>
     </head>
     <body>
-        <div id="div1"></div>
+        <div id="div1">111</div>
+        <script src="jquery-1.12.4.js"></script>
+        <script>
+            var div=document.getElementById('div1');
+            $(function(){
+                console.log(44444);
+            })
+            console.log(div);
+            console.log($('#div1').get(0));
+            console.log($('#div1')[0]);
+            console.log($(div).css('background','red'));
+            console.log($('#div1'));
+            window.onload = function(){
+                console.log(11111);
+            }
+            window.onload = function(){
+                console.log(22222);
+            }
+            $(document).ready(function(){
+                console.log(22222);
+            })
+            $(document).ready(function(){
+                console.log(33333);
+            })
 
+
+        </script>
     </body>
 </html>
