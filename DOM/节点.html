@@ -19,12 +19,12 @@
         var oDiv2=cocument.getElementById('div2');
         function getlast(elem){
             var f=elem.lastChild;
-            if(f!=1){
-
-            }
+            return f.nodeType!=1?getprevious:f;
         }
         function getprevious(elem){
-
+            do{
+               elem=elem.previousSibling;
+            }while(elem.nodeType!=1)
         }
     </script>
     </body>
