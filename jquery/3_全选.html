@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>您的爱好是什么</h1>
+    <input type="checkbox">篮球
+    <input type="checkbox">排球
+    <input type="checkbox">手球
+    <input type="checkbox">羽毛球
+    <input type="file" />
+    <input type="hidden" />
+    <input type="password" />
+    <br/>
+    <button id="all">全选</button>
+    <button id="no">全不选</button>
+    <button id="adverse">反选</button>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            $('#all').on('click',function(){
+                $('input').prop('checked',true);
+            })
+            $('#no').on('click',function(){
+                $('input').prop('checked',false);
+            })
+            $('#adverse').on('click',function(){
+                $('input').each(function(index,elem){
+                    if(elem.checked)
+                    elem.checked=!elem.checked;
+                })
+
+            })
+
+
+        })
+    </script>
+</body>
+</html>
