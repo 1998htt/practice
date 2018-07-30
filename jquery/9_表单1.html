@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+    <label for="">名称：</label>
+    <input type="text" value="名称">
+    </br>
+    <label for="">密码：</label>
+    <input type="password" value="..">
+    </br>
+    <label for="">详情信息：</label>
+    <input type="text" class="spe" value="详情信息">
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            $('.spe').css('width','200').css('height','30');
+            $("label").focus(function() {
+
+            })
+        })
+    </script>
+    </body>
+</html>

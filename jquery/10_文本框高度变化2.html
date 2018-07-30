@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <button id="big">放大</button>
+        <button id="small">缩小</button>
+        </br>
+        <textarea name="" id="te" cols="20" rows="5">接哦古买不买佩服目标个那日几个外婆感觉就覅欸日军攻破违法已经hi伊拉克人了你爸爸美女哦股票认购个</textarea>
+        <script src="jquery-1.12.4.js"></script>
+        <script>
+            $(function(){
+
+                $('#big').on('click',function(){
+                    var h=$('#te').height();
+                    if(h<500){
+                        $('#te').animate({
+                            height:h+50
+                        },400)
+                    }
+                })
+                $('#small').on('click',function(){
+                    var h=$('#te').height();
+                    if(h>50){
+                        $('#te').animate({
+                            height:h-50
+                        },400)
+                    }
+                })
+            })
+        </script>
+
+    </body>
+</html>
