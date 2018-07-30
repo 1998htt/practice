@@ -5,6 +5,63 @@
     <title>Title</title>
 </head>
 <body>
+    <ul>
+        <li>111</li>
+        <li class="'li2">222</li>
+        <li class="li3">
+            333
+            <!--<a href="" id="a1"></a>-->
+        </li>
+        <li>444</li>
+        <li class="li5">555</li>
+    </ul>
+    <div>
+        <h class="li3">hhhhhhhhh</h>
+        <p>pppppppp</p>
+    </div>
 
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $('.li2').nextUntil('.li5').css('background','red');
+
+        // $('ul').find('.li3').css('background','red').end().css('background','blue');
+
+        // $('div').contents().filter('.li3').css('background','red');
+
+        // $('li').filter('.li3').andSelf().css('background','red');
+
+        // $('li').filter('.li3').add('h').css('background','red');
+
+        // $('li').add('h').css('background','red');
+
+        // $('li').slice(2,5).css('background','red');
+
+        // $('li').slice(3).css('background','red');
+
+        // $('li').eq(1).css('background','red');
+
+        // $('li').filter('.li3').css('background','red');
+
+        // $('li').first().css('background','red');
+
+        // $('li').last().css('background','red');
+
+        // $('.li3').has('#a1').css('background','red');
+
+       // var xx= $('li').map(function(index,elem){
+       //      return $(elem).text();
+       //     console.log($(elem).text());
+       //  })
+        // console.log(xx.get(0));
+
+        // $('ul').on('click','li',function(e){
+        //
+        //       if($(e.target).is('.li3')){
+        //            console.log(11111);
+        //       }else{
+        //           console.log(33333);
+        //       }
+        //    })
+    </script>
 </body>
 </html>
