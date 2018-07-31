@@ -5,22 +5,16 @@
         <title>Title</title>
     </head>
     <body>
-    <label for="">名称：</label>
-    <input type="text" value="名称">
-    </br>
-    <label for="">密码：</label>
-    <input type="password" value="..">
-    </br>
-    <label for="">详情信息：</label>
-    <input type="text" class="spe" value="详情信息">
-    <script src="jquery-1.12.4.js"></script>
-    <script>
-        $(function(){
-            $('.spe').css('width','200').css('height','30');
-            $("label").focus(function() {
-
-            })
-        })
-    </script>
+        <fieldset>
+         <legend>个人基本信息</legend>
+            <label for="name">名称：</label>
+            <input id="name" type="text">
+            </br>
+            <label for="key">密码：</label>
+            <input id="key"type="password">
+            </br>
+            <label for="information">详情信息：</label>
+            <textarea name="" id="information" cols="20" rows="3"></textarea>
+        </fieldset>
     </body>
 </html>
