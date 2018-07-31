@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            div{
+                width: 200px;
+                margin-left:200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <button id="big">放大</button>
+            <button id="small">缩小</button>
+            <div>
+        </div>
+
+            <p id="content">
+                v打不开就康复机构能拉开我只能发表v打不开就康复机构能拉开我只能发表v打不开就康复机构能拉开我只能发表  v打不开就康复机构能拉开我只能发表
+            </p>
+        </div>
+        <script src="jquery-1.12.4.js"></script>
+        <script>
+            $(function(){
+
+                $('#big').on('click',function(){
+                    var b= parseInt($('#content').css('font-size'));
+                    $('#content').css('font-size',(b+2)+'px');
+                    console.log((b+2)+'px');
+                })
+                $('#small').on('click',function(){
+                    var b= parseInt($('#content').css('font-size'));
+                    $('#content').css('font-size',(b-2)+'px');
+                    console.log((b-2)+'px');
+                })
+
+            })
+        </script>
+    </body>
+</html>
