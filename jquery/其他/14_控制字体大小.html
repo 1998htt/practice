@@ -21,19 +21,21 @@
                 v打不开就康复机构能拉开我只能发表v打不开就康复机构能拉开我只能发表v打不开就康复机构能拉开我只能发表  v打不开就康复机构能拉开我只能发表
             </p>
         </div>
-        <script src="jquery-1.12.4.js"></script>
+        <script src="../jquery-1.12.4.js"></script>
         <script>
             $(function(){
 
                 $('#big').on('click',function(){
-                    var b= parseInt($('#content').css('font-size'));
-                    $('#content').css('font-size',(b+2)+'px');
-                    console.log((b+2)+'px');
+                    $('#content').css('font-size','+=2');
+                    // var b= parseInt($('#content').css('font-size'));
+                    // $('#content').css('font-size',(b+2)+'px');
+                    // console.log((b+2)+'px');
                 })
                 $('#small').on('click',function(){
-                    var b= parseInt($('#content').css('font-size'));
-                    $('#content').css('font-size',(b-2)+'px');
-                    console.log((b-2)+'px');
+                    $('#content').css('font-size','-=2');
+                    // var b= parseInt($('#content').css('font-size'));
+                    // $('#content').css('font-size',(b-2)+'px');
+                    // console.log((b-2)+'px');
                 })
 
             })

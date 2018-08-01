@@ -5,28 +5,31 @@
         <title>Title</title>
     </head>
     <body>
+    筛选:
+    <input type="text" id="head">
         <table>
             <thead>
                  <tr><th>姓名</th><th>性别</th><th>暂住地</th></tr>
             </thead>
-            <tbody>
+                <tbody>
                 <tr><td>张山</td><td>男</td><td>浙江宁波</td></tr>
                 <tr><td>李四</td><td>女</td><td>浙江杭州</td></tr>
                 <tr><td>王五</td><td>男</td><td>湖南长沙</td></tr>
-                <tr><td>找六</td><td>男</td><td>浙江温州</td></tr>
+                <tr><td>赵六</td><td>男</td><td>浙江温州</td></tr>
                 <tr><td>Rain</td><td>男</td><td>浙江杭州</td></tr>
                 <tr><td>MAXMAN</td><td>女</td><td>浙江杭州</td></tr>
             </tbody>
         </table>
-        <script src="jquery-1.12.4.js"></script>
-        <script>
-            $(function(){
-                $('tbody>tr:even').css('background','red');
-                $('tbody>tr:odd').css('background','blue');
-
-
-
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            $('#head').keyup(function(){
+                var value=$(this).val();
+               $('tbody tr').hide().filter(':contains('+value+')').show();
             })
-        </script>
+
+
+        })
+    </script>
     </body>
 </html>

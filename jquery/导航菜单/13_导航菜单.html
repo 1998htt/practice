@@ -30,7 +30,7 @@
                 float:left;
             }
             .hmain a{
-                background:url(down.gif) no-repeat  5px center;
+                background:url(img/down.gif) no-repeat  5px center;
 
             }
             .hmain li a{
@@ -80,16 +80,16 @@
             </ul>
         </li>
     </ul>
-    <script src="jquery-1.12.4.js"></script>
+    <script src="../jquery-1.12.4.js"></script>
     <script>
         $(function(){
             $('.hmain').hover(function(){
                 $(this).find('ul').slideDown();
-                $(this).children('a').css('background','url(up.gif) no-repeat no-repeat 5px center')
+                $(this).children('a').css('background','url(img/up.gif) no-repeat no-repeat 5px center')
 
             },function(){
                 $(this).find('ul').slideUp();
-                $(this).children('a').css('background','url(down.gif) no-repeat 5px center')
+                $(this).children('a').css('background','url(img/down.gif) no-repeat 5px center')
             })
 
 
