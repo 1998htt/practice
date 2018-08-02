@@ -10,7 +10,7 @@
                 padding:0
             }
             img{
-                border:none;
+                border:0;
             }
             html,body{
                 height: 100%;
@@ -45,7 +45,7 @@
         <script>
             var iNow=0;
             for(var i=0;i<24;i++){
-              $('#contain').append(' <img src="img/thumbs/'+(i+1)+'.jpg" alt="">');
+              $('#contain').append('<img src="img/thumbs/'+(i+1)+'.jpg" alt="">');
             }
             $('#contain').on('tap','img',function(){
                 $('#contain').hide();
