@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>Title</title>
+        <style>
+            *{
+                margin:0;
+            }
+            div{
+                width: 600px;
+                height: 200px;
+                background: #ff0000
+            }
+            @media (max-width:400px) {
+                div{
+                    background: #0000ff;
+                }
+            }
+            /*@media(orientation:landscape){*/
+                /*div{*/
+                    /*width: 230px;*/
+                    /*height: 400px;*/
+                    /*background: #00ff00;*/
+                /*}*/
+            /*}*/
+            @media(orientation:portrait){
+                div{
+                    width: 250px;
+                    height: 400px;
+                    background: #0000ff;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+
+        </div>
+    </body>
+</html>
