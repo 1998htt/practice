@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Title</title>
+        <style>
+            *{
+                margin:0;
+            }
+            #div1{
+                width: 200px;
+                height: 200px;
+                background: #ff0000;
+            }
+            #div2{
+                width: 100px;
+                height: 100px;
+                background: #ff00ff;
+                position:absolute;
+                top:0;
+                left:0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="div1">
+
+        </div>
+        <div id="div2">
+
+        </div>
+        <script src="zepto.js"></script>
+        <script src="touch.js"></script>
+        <script src="fastclick.js"></script>
+        <script>
+            $(function(){
+                $('#div2').on('tap',function(){
+                    $('#div2').hide();
+                    console.log(11111);
+                })
+                $('#div1').on('click',function(){
+                    console.log(22222);
+                })
+            })
+        </script>
+    </body>
+</html>

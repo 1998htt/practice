@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Title</title>
+        <style>
+            *{
+                margin:0;
+                padding:0
+            }
+            img{
+                border:none;
+            }
+            html,body{
+                height: 100%;
+            }
+            #contain img{
+                float:left;
+                width: 25%;
+                box-sizing: border-box;
+                border-bottom:4px solid #000000;
+                border-right:4px solid #000000;
+            }
+            #big{
+                display:none;
+                height: 100%;
+                background-color: #000000;
+                background-repeat: no-repeat;
+                background-size:contain;
+                background-position:center;
+
+            }
+        </style>
+    </head>
+    <body>
+        <div id="contain">
+
+        </div>
+    <div id="big">
+
+    </div>
+        <script src="../zepto.js"></script>
+        <script src="../touch.js"></script>
+        <script>
+            var iNow=0;
+            for(var i=0;i<24;i++){
+              $('#contain').append(' <img src="img/thumbs/'+(i+1)+'.jpg" alt="">');
+            }
+            $('#contain').on('tap','img',function(){
+                $('#contain').hide();
+                iNow=$(this).index();
+                $('#big').css('background-image','url(img/'+($(this).index()+1)+'.jpg)');
+                $('#big').show();
+            })
+            $('#big').on('tap',function(){
+                $('#contain').show();
+                $('#big').hide();
+            }).on('swipeLeft',function(){
+                iNow++;
+                if(iNow==24){
+                    iNow=0;
+                }
+                $('#big').css('background-image','url(img/'+(iNow+1)+'.jpg)');
+            }).on('swipeRight',function(){
+                iNow--;
+                if(iNow==-1){
+                    iNow=23;
+                }
+                $('#big').css('background-image','url(img/'+(iNow+1)+'.jpg)');
+            })
+        </script>
+
+    </body>
+</html>
