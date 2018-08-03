@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <script>
+            // var arr = [1,2,3,[4,5]];
+            // var [x,y=10,z,q] = arr;
+            // console.log(x,y,z,q);
+
+            // var [a,,c,[d]] = arr;
+            // console.log(a,c,d);
+
+            //1 var a=5,b=7;
+            // a = a + b;
+            // b = a - b;
+            // a = a - b;
+            // console.log(a,b);
+
+            //2 var a=5;b=7;
+            // var [b,a] = [a,b];
+            // console.log(a,b);
+
+            //3 var a=5,b=7;
+            // b = [a,a=b][0]
+            // console.log(a,b);
+
+            // var obj = {
+            //     a:1,
+            //     b:{
+            //         c:3
+            //     }
+            // }
+            // var {a:x=3,b:{c:y}} = obj;
+            // console.log(x,y);
+
+            // function fn([a,b=2]){
+            //     console.log(a,b);
+            // }
+            // fn([]);
+
+            function fn({a=1,b=2}){
+                console.log(a,b);
+            }
+            fn({});
+        </script>
+    </body>
+</html>
