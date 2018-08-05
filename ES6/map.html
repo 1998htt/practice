@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <script>
+            var m = new Map();
+            m.set(1,'b');
+            m.set('a',1233);
+            m.set(undefined,111);
+            m.set(null,222);
+            var obj = {};
+            m.set(obj,333);
+            m.set(true,444);
+            m.set(NaN,555);
+            m.delete(1);
+            // m.clear();
+            // for(var key of m){
+            //     console.log(key);
+            // }
+            var keys = map.keys();
+            console.log(keys);
+
+            // console.log(m.get(NaN));
+        </script>
+    </body>
+</html>

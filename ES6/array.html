@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+    <script>
+       var arr = [1,2,3,4,5,6];
+       // console.log(arr.forEach(function(xx,index,yy){
+       //     // console.log(xx);
+       //     return xx;
+       //     // console.log(index);
+       // }))
+
+       // console.log(arr.map(function(xx,index){
+       //     if(xx>3)
+       //         return xx + 1;
+       //     return xx + 5;
+       //
+       // }))
+
+        console.log(arr.filter(function(xx,index){
+            xx += 10;
+            return xx > 3
+        }))
+    </script>
+    </body>
+</html>
