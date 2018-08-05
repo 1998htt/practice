@@ -12,134 +12,130 @@
                 list-style: none;
             }
             #contain{
-                width:520px;
-                height: 280px;
+                width: 720px;
+                height: 1080px;
                 margin:100px auto;
                 position: relative;
             }
-            #contain .imgs img{
+            #contain img{
                 position:absolute;
                 display:none;
             }
             #contain .nav{
                 position: absolute;
-                right:10px;
+                right:50px;
                 bottom:10px;
             }
-            #contain .nav li,span{
+            #contain .arrows{
+                position: absolute;
+                left:10px;
+                bottom:10px;
+            }
+            #contain .nav li,.arrows span{
                 float:left;
                 width: 20px;
                 height: 20px;
-                text-align: center;
-                line-height: 20px;
                 background: #000000;
                 color: #ffffff;
-                margin-right:10px;
+                margin-left:10px;
+                text-align: center;
+                line-height: 20px;
             }
-            #contain .le-ri{
-              position: absolute;
-                left:10px;
-                bottom: 10px;
-            }
-            #contain .imgs .selected{
+            #contain .img .selected{
                 display:block;
             }
             #contain .nav .selected{
-                background: orange;
+               background:orange;
             }
         </style>
+
     </head>
     <body>
-    <div id="contain">
-        <div class="imgs">
-            <img class="selected" src="img/lh1.jpg" alt="">
-            <img src="img/lh2.jpg" alt="">
-            <img src="img/3.jpg" alt="">
-            <img src="img/4.jpg" alt="">
-        </div>
-        <ul class="nav">
-            <li class="selected">1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-        </ul>
-        <div class="le-ri">
-            <span id="le">&lt</span>
-            <span id="ri">&gt</span>
-        </div>
-    </div>
-    <script>
-        var oContain=document.getElementById('contain');
-        var aImg=document.getElementsByTagName('img');
-        var aLi=document.getElementsByTagName('li');
-        var oLe=document.getElementById('le');
-        var oRi=document.getElementById('ri');
-        var nowindex=0;
-        for(var i=0;i<aLi.length;i++){
-            aLi[i].index=i;
-            aLi[i].onmouseover = function(){
-                for(var j=0;j<aLi.length;j++){
-                    aLi[j].className='';
-                    aImg[j].className='';
-                }
-                aLi[this.index].className = 'selected';
-                aImg[this.index].className='selected';
-            }
-        }
-        oRi.onclick = function(){
-            nowindex++;
-            if(nowindex==aLi.length){
-                nowindex=0;
-            }
-            for(var j=0;j<aLi.length;j++){
-                aLi[j].className='';
-                aImg[j].className='';
-            }
-            aLi[nowindex].className = 'selected';
-            aImg[nowindex].className='selected';
-        }
-        oLe.onclick = function(){
-            nowindex--;
-            if(nowindex==-1){
-                nowindex=aLi.length-1;
-            }
-            for(var j=0;j<aLi.length;j++){
-                aLi[j].className='';
-                aImg[j].className='';
-            }
-            aLi[nowindex].className = 'selected';
-            aImg[nowindex].className='selected';
-        }
-       timer=setInterval(function(){
-            nowindex++;
-            if(nowindex==aLi.length){
-                nowindex=0;
-            }
-            for(var j=0;j<aLi.length;j++){
-                aLi[j].className='';
-                aImg[j].className='';
-            }
-            aLi[nowindex].className = 'selected';
-            aImg[nowindex].className='selected';
-        },1000);
-        oContain.onmouseover = function(){
-            clearInterval(timer);
-        }
-        oContain.onmouseout = function(){
-            timer=setInterval(function(){
-                nowindex++;
-                if(nowindex==aLi.length){
-                    nowindex=0;
-                }
-                for(var j=0;j<aLi.length;j++){
-                    aLi[j].className='';
-                    aImg[j].className='';
-                }
-                aLi[nowindex].className = 'selected';
-                aImg[nowindex].className='selected';
-            },1000);
-        }
-    </script>
+       <div id="contain">
+           <div class="img">
+               <img class="selected" src="img/nn1.jpg" alt="">
+               <img src="img/nn2.jpg" alt="">
+               <img src="img/nn3.jpg" alt="">
+               <img src="img/nn4.jpg" alt="">
+           </div>
+           <ul class="nav">
+               <li class="selected">1</li>
+               <li>2</li>
+               <li>3</li>
+               <li>4</li>
+           </ul>
+           <div class="arrows">
+               <span id="left">&lt</span>
+               <span id="right">&gt</span>
+           </div>
+       </div>
+       <script>
+           var aLi = document.getElementsByTagName('li');
+           var aImg = document.getElementsByTagName('img');
+           var oLeft = document.getElementById('left');
+           var oRight = document.getElementById('right');
+           var oContain = document.getElementById('contain');
+           var nowIndex=0;
+           for(var i=0;i<aLi.length;i++){
+               aLi[i].index=i;
+               aLi[i].onclick = function(){
+                   for(var j=0;j<aLi.length;j++){
+                       aLi[j].className='';
+                       aImg[j].className='';
+                   }
+                   aLi[this.index].className = 'selected';
+                   aImg[this.index].className = 'selected';
+
+               }
+           }
+           function play(){
+
+              timer = setInterval(function(){
+                   nowIndex++;
+                   if(nowIndex==aLi.length){
+                       nowIndex=0;
+                   }
+                   for(var j=0;j<aLi.length;j++){
+                       aLi[j].className='';
+                       aImg[j].className='';
+                   }
+                   aLi[nowIndex].className = 'selected';
+                   aImg[nowIndex].className = 'selected';
+               },1000)
+           }
+           play();
+           oContain.onmouseover = function(){
+               clearInterval(timer);
+           }
+           oContain.onmouseout = function(){
+               play();
+           }
+
+           oLeft.onclick = function(){
+               nowIndex--;
+               if(nowIndex==-1){
+                   nowIndex=aLi.length-1;
+               }
+               for(var j=0;j<aLi.length;j++){
+                   aLi[j].className='';
+                   aImg[j].className='';
+               }
+               aLi[nowIndex].className = 'selected';
+               aImg[nowIndex].className = 'selected';
+           }
+           oRight.onclick = function(){
+               nowIndex++;
+               if(nowIndex==aLi.length){
+                   nowIndex=0;
+               }
+               for(var j=0;j<aLi.length;j++){
+                   aLi[j].className='';
+                   aImg[j].className='';
+               }
+               aLi[nowIndex].className = 'selected';
+               aImg[nowIndex].className = 'selected';
+           }
+       </script>
     </body>
 
 </html>

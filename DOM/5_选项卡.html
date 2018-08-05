@@ -55,19 +55,22 @@
            <div>bbbb</div>
            <div>cccc</div>
        </div>
+       <script src="jquery-1.12.4.js"></script>
        <script>
+
            var aLi=document.getElementsByTagName('li');
            var oContain=document.getElementById("contain");
            var aDiv=oContain.getElementsByTagName('div');
            for(var i=0;i<aLi.length;i++){
-               aLi[i].index=i;
                aLi[i].onclick=function(){
-                   for(var j=0;j<aLi.length;j++){
-                       aLi[j].className='';
-                       aDiv[j].className='';
-                   }
-                   this.className='first';
-                   aDiv[this.index].className='show';
+                   $(this).addClass("first").siblings().removeClass("first");
+                   // $(this).addClass("show").siblings().removeClass("show");
+                   // for(var j=0;j<aLi.length;j++){
+                   //     aLi[j].className='';
+                   //     aDiv[j].className='';
+                   // }
+                   // this.className='first';
+                   // aDiv[this.index].className='show';
                }
            }
        </script>
