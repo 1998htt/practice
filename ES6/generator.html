@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+    <script src="jquery-1.12.4.js"></script>
+        <script>
+            // function* fn(){
+            //     yield 'hello';
+            //     yield 'world';
+            //     yield 'successful';
+            // }
+            // var g = fn();
+            // console.log(g.next());
+            // console.log(g.next());
+            // console.log(g.next());
+            // console.log(g.next());
+
+            function request(r){
+                $.get(r,function(d){
+                    console.log(d);
+                    g.next();
+                })
+            }
+            function* fn(){
+                yield request('a.json');
+                yield request('b.json');
+                yield request('c.json');
+            }
+            var g = fn();
+            var a = g.next();
+
+
+        </script>
+    </body>
+</html>
