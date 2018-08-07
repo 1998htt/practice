@@ -1,0 +1,119 @@
+@charset "UTF-8";
+/*这是一个多行注释*/
+/*!强制*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+#div1 {
+  background: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+#div2 {
+  font-size: 16px;
+}
+#div2 a {
+  color: #000000;
+}
+#div2 a:hover {
+  font-size: 20px;
+}
+#div2 a-test {
+  font-size: 22px;
+}
+
+#div3 {
+  background-color: #ffffff;
+  background-position: 0 center;
+  background-size: contain;
+}
+
+#div4 {
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: #00A5FF;
+}
+
+#test {
+  background: url("");
+}
+
+#div5, #div7 {
+  width: 200px;
+  height: 200px;
+  background: #000;
+}
+#div5 a, #div7 a {
+  font-size: 10px;
+}
+
+#div6 {
+  width: 300px;
+  height: 300px;
+  background: #f0f;
+}
+
+#div7 {
+  width: 200px;
+}
+
+#div8 {
+  color: rgba(51, 51, 51, 0.5);
+  backdround: rgba(0, 0, 0, 0.8);
+}
+
+#div9 {
+  color: #fff;
+}
+
+#div10 .cl-1 {
+  width: 1px;
+}
+#div10 .cl-2 {
+  width: 2px;
+}
+#div10 .cl-3 {
+  width: 3px;
+}
+#div10 .cl-4 {
+  width: 4px;
+}
+#div10 .cl-5 {
+  width: 5px;
+}
+
+.fail {
+  background: icon- fail;
+}
+
+.success {
+  background: icon- success;
+}
+
+.wran {
+  background: icon- wran;
+}
+
+.div1 {
+  width: 100px;
+}
+
+.div1 {
+  width: 100px;
+}
+
+#div11 {
+  width: 2px;
+}
+
+/*# sourceMappingURL=index.css.map */
