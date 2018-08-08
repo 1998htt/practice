@@ -1,0 +1,150 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'webpack',
+1 verbose cli   'webpack-cli',
+1 verbose cli   '--save-dev' ]
+2 info using npm@3.10.10
+3 info using node@v6.11.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData webpack
+8 silly fetchPackageMetaData webpack-cli
+9 silly fetchNamedPackageData webpack
+10 silly mapToRegistry name webpack
+11 silly mapToRegistry using default registry
+12 silly mapToRegistry registry https://registry.npmjs.org/
+13 silly mapToRegistry data Result {
+13 silly mapToRegistry   raw: 'webpack',
+13 silly mapToRegistry   scope: null,
+13 silly mapToRegistry   escapedName: 'webpack',
+13 silly mapToRegistry   name: 'webpack',
+13 silly mapToRegistry   rawSpec: '',
+13 silly mapToRegistry   spec: 'latest',
+13 silly mapToRegistry   type: 'tag' }
+14 silly mapToRegistry uri https://registry.npmjs.org/webpack
+15 silly fetchNamedPackageData webpack-cli
+16 silly mapToRegistry name webpack-cli
+17 silly mapToRegistry using default registry
+18 silly mapToRegistry registry https://registry.npmjs.org/
+19 silly mapToRegistry data Result {
+19 silly mapToRegistry   raw: 'webpack-cli',
+19 silly mapToRegistry   scope: null,
+19 silly mapToRegistry   escapedName: 'webpack-cli',
+19 silly mapToRegistry   name: 'webpack-cli',
+19 silly mapToRegistry   rawSpec: '',
+19 silly mapToRegistry   spec: 'latest',
+19 silly mapToRegistry   type: 'tag' }
+20 silly mapToRegistry uri https://registry.npmjs.org/webpack-cli
+21 verbose request uri https://registry.npmjs.org/webpack
+22 verbose request no auth needed
+23 info attempt registry request try #1 at 10:06:11
+24 verbose request id ea37ebee19b19842
+25 http request GET https://registry.npmjs.org/webpack
+26 verbose request uri https://registry.npmjs.org/webpack-cli
+27 verbose request no auth needed
+28 info attempt registry request try #1 at 10:06:12
+29 http request GET https://registry.npmjs.org/webpack-cli
+30 http 200 https://registry.npmjs.org/webpack-cli
+31 verbose headers { date: 'Tue, 07 Aug 2018 02:10:59 GMT',
+31 verbose headers   'content-type': 'application/json; charset=UTF-8',
+31 verbose headers   'transfer-encoding': 'chunked',
+31 verbose headers   connection: 'keep-alive',
+31 verbose headers   'set-cookie': [ '__cfduid=d89aa6f3cc10b9b087cc3c04c7c5d29691533607859; expires=Wed, 07-Aug-19 02:10:59 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+31 verbose headers   'cache-control': 'max-age=300',
+31 verbose headers   'cf-cache-status': 'HIT',
+31 verbose headers   'cf-ray': '446635bf7c1098b3-LAX',
+31 verbose headers   etag: 'W/"0b8c11fdbeb70a8dec3bc1180d5f4770"',
+31 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+31 verbose headers   'last-modified': 'Wed, 18 Jul 2018 14:57:38 GMT',
+31 verbose headers   vary: 'accept-encoding, accept',
+31 verbose headers   server: 'cloudflare',
+31 verbose headers   'content-encoding': 'gzip' }
+32 silly get cb [ 200,
+32 silly get   { date: 'Tue, 07 Aug 2018 02:10:59 GMT',
+32 silly get     'content-type': 'application/json; charset=UTF-8',
+32 silly get     'transfer-encoding': 'chunked',
+32 silly get     connection: 'keep-alive',
+32 silly get     'set-cookie': [ '__cfduid=d89aa6f3cc10b9b087cc3c04c7c5d29691533607859; expires=Wed, 07-Aug-19 02:10:59 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+32 silly get     'cache-control': 'max-age=300',
+32 silly get     'cf-cache-status': 'HIT',
+32 silly get     'cf-ray': '446635bf7c1098b3-LAX',
+32 silly get     etag: 'W/"0b8c11fdbeb70a8dec3bc1180d5f4770"',
+32 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+32 silly get     'last-modified': 'Wed, 18 Jul 2018 14:57:38 GMT',
+32 silly get     vary: 'accept-encoding, accept',
+32 silly get     server: 'cloudflare',
+32 silly get     'content-encoding': 'gzip' } ]
+33 verbose get saving webpack-cli to C:\Users\de\AppData\Roaming\npm-cache\registry.npmjs.org\webpack-cli\.cache.json
+34 verbose correctMkdir C:\Users\de\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+35 http 200 https://registry.npmjs.org/webpack
+36 verbose headers { date: 'Tue, 07 Aug 2018 02:10:59 GMT',
+36 verbose headers   'content-type': 'application/json; charset=UTF-8',
+36 verbose headers   'transfer-encoding': 'chunked',
+36 verbose headers   connection: 'keep-alive',
+36 verbose headers   'set-cookie': [ '__cfduid=d63ed411068a93ccf0fc42cc2f04e608f1533607859; expires=Wed, 07-Aug-19 02:10:59 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+36 verbose headers   'cache-control': 'max-age=300',
+36 verbose headers   'cf-cache-status': 'HIT',
+36 verbose headers   'cf-ray': '446635bf8a01986b-LAX',
+36 verbose headers   etag: 'W/"93724995e9fb7ef93e0751b217a6f1ee"',
+36 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+36 verbose headers   'last-modified': 'Mon, 06 Aug 2018 07:14:49 GMT',
+36 verbose headers   vary: 'accept-encoding, accept',
+36 verbose headers   server: 'cloudflare',
+36 verbose headers   'content-encoding': 'gzip' }
+37 silly get cb [ 200,
+37 silly get   { date: 'Tue, 07 Aug 2018 02:10:59 GMT',
+37 silly get     'content-type': 'application/json; charset=UTF-8',
+37 silly get     'transfer-encoding': 'chunked',
+37 silly get     connection: 'keep-alive',
+37 silly get     'set-cookie': [ '__cfduid=d63ed411068a93ccf0fc42cc2f04e608f1533607859; expires=Wed, 07-Aug-19 02:10:59 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+37 silly get     'cache-control': 'max-age=300',
+37 silly get     'cf-cache-status': 'HIT',
+37 silly get     'cf-ray': '446635bf8a01986b-LAX',
+37 silly get     etag: 'W/"93724995e9fb7ef93e0751b217a6f1ee"',
+37 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+37 silly get     'last-modified': 'Mon, 06 Aug 2018 07:14:49 GMT',
+37 silly get     vary: 'accept-encoding, accept',
+37 silly get     server: 'cloudflare',
+37 silly get     'content-encoding': 'gzip' } ]
+38 verbose get saving webpack to C:\Users\de\AppData\Roaming\npm-cache\registry.npmjs.org\webpack\.cache.json
+39 verbose correctMkdir C:\Users\de\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+40 silly install normalizeTree
+41 silly loadCurrentTree Finishing
+42 silly loadIdealTree Starting
+43 silly install loadIdealTree
+44 silly cloneCurrentTree Starting
+45 silly install cloneCurrentTreeToIdealTree
+46 silly cloneCurrentTree Finishing
+47 silly loadShrinkwrap Starting
+48 silly install loadShrinkwrap
+49 silly loadShrinkwrap Finishing
+50 silly loadAllDepsIntoIdealTree Starting
+51 silly install loadAllDepsIntoIdealTree
+52 silly rollbackFailedOptional Starting
+53 silly rollbackFailedOptional Finishing
+54 silly runTopLevelLifecycles Finishing
+55 silly install printInstalled
+56 verbose stack Error: Refusing to install webpack as a dependency of itself
+56 verbose stack     at checkSelf (C:\Program Files\nodejs\node_modules\npm\lib\install\validate-args.js:53:14)
+56 verbose stack     at Array.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\bind-actor.js:15:8)
+56 verbose stack     at LOOP (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\chain.js:15:14)
+56 verbose stack     at chain (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\chain.js:20:5)
+56 verbose stack     at C:\Program Files\nodejs\node_modules\npm\lib\install\validate-args.js:16:5
+56 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\async-map.js:52:35
+56 verbose stack     at Array.forEach (native)
+56 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\async-map.js:52:11
+56 verbose stack     at Array.forEach (native)
+56 verbose stack     at asyncMap (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\async-map.js:51:8)
+57 verbose cwd E:\practice\webpack
+58 error Windows_NT 10.0.16299
+59 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "webpack" "webpack-cli" "--save-dev"
+60 error node v6.11.0
+61 error npm  v3.10.10
+62 error code ENOSELF
+63 error Refusing to install webpack as a dependency of itself
+64 error If you need help, you may report this error at:
+64 error     <https://github.com/npm/npm/issues>
+65 verbose exit [ 1, true ]
