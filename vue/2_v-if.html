@@ -1,10 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+    <div id="div1">
+        <!--<p v-if="xx=='A'">-->
+            <!--ppppppppp-->
+        <!--</p>-->
+        <!--<h1 v-else-if="xx=='B'">-->
+            <!--hhhhhhhhhhhh-->
+        <!--</h1>-->
+        <!--<span v-else>-->
+            <!--spanspanspan-->
+        <!--</span>-->
 
-</body>
+        <!--<template v-if="msg">-->
+            <!--<p>ppppppppp</p>-->
+            <!--<h1>hhhhhhhhh</h1>-->
+            <!--<span>spanspan</span>-->
+        <!--</template>-->
+
+        <div v-show="msg">
+            <p>ppppppppp</p>
+            <h1>hhhhhhhhh</h1>
+            <span>spanspan</span>
+        </div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+      var vm = new Vue({
+          el:"#div1",
+          data:{
+              msg:false,
+              xx:'A'
+          }
+      })
+    </script>
+    </body>
 </html>
