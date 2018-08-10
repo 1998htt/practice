@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #div1{
+            margin:30px auto;
+            width: 300px;
+        }
+        h1{
+            width: 200px;
+            text-align: center;
+            margin-bottom:20px;
+        }
+        li{
+            list-style: none;
+        }
+        li{
+            background: yellow;
+            width: 200px;
+            height: 40px;
+            margin-bottom:10px;
+            line-height: 40px;
+        }
+        span {
+            float:right;
+        }
+        .red{
+            background:red;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    <h1>services</h1>
+    <ul>
+        <li v-for="(val) in arr" :class="{red:val.active}" @click="fun(val)">
+            {{val.name}}<span>{{val.price}}</span>
+        </li>
+    </ul>
+    <hr>
+    total:<span>{{msg}}</span>
+</div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:"#div1",
+            data:{
+                arr:[
+                    {name:'aaa',price:234,active:false},
+                    {name:'bbb',price:927,active:false},
+                    {name:'ccc',price:247,active:false},
+                    {name:'ddd',price:316,active:false},
+                    {name:'eee',price:532,active:false}
+                ],
+                msg:0
+            },
+            methods:{
+              fun(val){
+                  val.active= !val.active;
+                  if(val.active){
+                      this.msg += val.price;
+                  }else{
+                      this.msg -= val.price
+                  }
+              }
+            }
+        })
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+            #div1{
+                margin:30px auto;
+                width: 300px;
+                border-bottom:1px solid #000000;
+            }
+            h1{
+                width: 200px;
+                text-align: center;
+                margin-bottom:20px;
+            }
+            li{
+                list-style: none;
+            }
+            li{
+                background: #ffff00;
+                width: 200px;
+                height: 40px;
+                margin-bottom:10px;
+            }
+            span{
+                line-height: 40px;
+            }
+            .left{
+                float:left;
+            }
+            .right{
+                float:right;
+            }
+        </style>
+    </head>
+    <body>
+    <div id="div1">
+        <div id="div2">
+            <h1>services</h1>
+            <ul>
+                <li>
+                    <span class="left">aaa</span>
+                    <span class="right">234</span>
+                </li>
+                <li>
+                    <span class="left">bbb</span>
+                    <span class="right">927</span>
+                </li>
+                <li>
+                    <span class="left">ccc</span>
+                    <span class="right">247</span>
+                </li>
+                <li>
+                    <span class="left">ddd</span>
+                    <span class="right">316</span>
+                </li>
+                <li>
+                    <span class="left">eee</span>
+                    <span class="right">532</span>
+                </li>
+            </ul>
+            <div>
+                <span class="left">total</span>
+                <span class="right">0</span>
+
+            </div>
+        </div>
+
+    </div>
+        <!--<script src="vue.js"></script>-->
+        <script>
+            var aRight = document.getElementsByClassName("right");
+            var aLi = document.getElementsByTagName('li');
+            // var oPrice = document.getElementById("price");
+            // console.log(aLeft[0].innerHTML);
+            for(var i=0;i<aLi.length;i++){
+                aLi[i].index=i;
+                aLi[i].onclick = function(){
+                    if(aLi[this.index].style.background = '#ffff00'){
+                        aLi[this.index].style.background = '#ff0000';
+                        s = (aRight[this.index].innerHTML)*1;
+                        s1 = (aRight[5].innerHTML)*1;
+                        s1+=s;
+                        aRight[5].innerHTML=s1;
+                    }else{
+                        aLi[this.index].style.background = '#ffff00';
+                        console.log(12345);
+                        // s = (aRight[this.index].innerHTML)*1;
+                        // s1 = (aRight[5].innerHTML)*1;
+                        // s1-=s;
+                        // aRight[5].innerHTML=s1;
+                    }
+
+                }
+            }
+
+
+
+        </script>
+    </body>
+</html>
