@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <div id="div1">
+            是否需要额外付费设施：
+            <input type="checkbox" @click="click1">
+            <ul>
+                <li v-for="val in arr" v-show="isShow">
+                    {{val.name}}({{val.price}})
+                    <input type="checkbox" v-model="arr1" :value="val" >
+                </li>
+            </ul>
+            订单费用信息
+            <ul>
+                <li v-for="xx in arr1">
+                  {{xx.name}}({{xx.price}})
+                </li>
+            </ul>
+            总金额：{{total}}
+        </div>
+        <script src="vue.js"></script>
+        <script>
+            var vm = new Vue({
+                el:"#div1",
+                data:{
+                    msg:'',
+                    isShow:false,
+                    arr:[
+                        {name:"沙发",price:100},
+                        {name:"床",price:200},
+                        {name:"wifi",price:20}
+                    ],
+                    arr1:[{
+                        name:"群力豪华花园内",
+                        price:400
+                    }]
+                },
+                methods:{
+                  click1(){
+                    this.isShow=!this.isShow;
+                    this.arr1.splice(1);
+                  },
+                },
+                computed:{
+                    total(){
+                        var sum = 0;
+                        this.arr1.forEach((x)=>{
+                            sum+=x.price;
+                        })
+                        return sum;
+                    }
+                }
+
+            })
+
+
+        </script>
+
+    </body>
+</html>
