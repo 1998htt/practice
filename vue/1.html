@@ -3,29 +3,48 @@
     <head>
         <meta charset="UTF-8">
         <title>Title</title>
+        <style>
+            .red{
+                background: red;
+            }
+        </style>
     </head>
     <body>
     <div id="div1">
         <input type="text" v-model="val">
-        <button @click="add" >add</button>
+        <button @click="add">add</button>
         <ul>
+            <li v-for="val in arr" :class="{red:isRed} "@click1="">
+                {{val}}
+            </li>
 
         </ul>
+
     </div>
         <script src="vue.js"></script>
         <script>
             var vm = new Vue({
                 el:"#div1",
                 data:{
-                    msg:0,
-                    val:''
+                    val:'',
+                    arr:[],
+                    isRed:false
                 },
                 methods:{
                   add(){
-                      ul.innerHTML=this.val
-
+                      this.arr.push(this.val);
                   }
-                }
+                },
+                // computed:{
+                //     q(){
+                //         return this.arr.sort(function(a,b){
+                //             return a-b;
+                //         })
+                //     }
+                //
+                // }
+
+
 
             })
 
