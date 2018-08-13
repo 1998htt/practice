@@ -5,13 +5,12 @@
         <title>Title</title>
     </head>
 <body>
-    <demo></demo>
+
     <div id="app">
-        <demo1></demo1>
+        <demo1 x-msg="123" :yy="m1"></demo1>
+        <demo1 x-msg="456" :yy="m2"></demo1>
     </div>
-    <div id="app2">
-        <demo2></demo2>
-    </div>
+
 
     <script src="vue.js"></script>
     <script>
@@ -22,11 +21,14 @@
         new Vue({
             el:"#app",
             data:{
-
+                msg:'333',
+                m1:'222',
+                m2:'111'
             },
             components:{
                 demo1:{
-                    template:"<div>didv1 <h1>hhhhhhhh</h1></div>"
+                    template:"<div>{{xMsg}} {{yy}}<h1>hhhhhhhh</h1></div>",
+                    props:['xMsg','yy']
                 }
             }
         });
