@@ -28,14 +28,14 @@
         <my-dialog title="登录" v-show="isLoginShow" @close="close">
             用户名: <input type="text">
             <br>
-            密码是: <input type="keyword">
+            密码是: <input type="password">
             <br>
             <input type="submit">
         </my-dialog>
         <my-dialog title="注册" v-show="isRegShow" @close="close">
             用户名: <input type="text">
             <br>
-            密码是: <input type="keyword">
+            密码是: <input type="password">
             <br>
             邮箱是: <input type="text">
             <br>
@@ -46,13 +46,13 @@
         <div id="dialog-box">
             <div class="title">
                 <span>{{title}}</span>
-                <span class="close" @click="$emit('close')">[X]</span>
+                <span class="close" @click="$emit('close')">X</span>
             </div>
             <div>
                 <slot>
                     用户名: <input type="text">
                     <br>
-                    密码是: <input type="keyword">
+                    密码是: <input type="password">
                     <br>
                     <input type="submit">
                 </slot>
