@@ -5,7 +5,6 @@
         <title>Title</title>
     </head>
 <body>
-
     <div id="app">
         <demo1 x-msg="123" :yy="m1">
             <p slot="p1">ppppppp</p>
@@ -16,14 +15,14 @@
 
     <script type="text/x-template" id="temp">
          <div>
-             {{xMsg}} {{yy}}
+             {{xMsg}}
              <slot name="p1">
                  我是默认的pppppp
              </slot>
              <slot name="p2">
                  我是默认的p1p1p1p1
              </slot>
-             <h1>hhhhhhhh</h1>
+             <h1> {{yy}}</h1>
          </div>
     </script>
     <script src="vue.js"></script>
