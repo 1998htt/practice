@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <div id="app">
+            <li v-for="val in arr">
+                <input type="checkbox" >
+                {{val.name}}{{val.price}}
+                <button @click="reduce" :v-model="num">-</button>
+                <input type="text" :value="num">
+                <button @click="add" :v-model="num">+</button>
+                总金额：{{total}}
+                <a href="">删除</a>
+            </li>
+            总计：0
+
+
+        </div>
+        <script src="../vue.js"></script>
+        <script>
+            var vm = new Vue({
+                el:"#app",
+                data:{
+                    num:0,
+                    arr:[
+                        {name:"黄鹤楼",price:19},
+                        {name:"加多宝",price:8}
+                    ],
+
+                },
+                methods:{
+                    add(){
+                        var sum = 0;
+                        sum += (this.num)*1+1;
+                        this.num = sum;
+                        return sum;
+                    },
+                    reduce(){
+                        var sum = 0;
+                        if(this.num==0){
+                            this.num=0;
+                        }else{
+                            sum = (this.num)*1-1;
+                        }
+                        this.num = sum;
+                    }
+                },
+                computed:{
+                    total(){
+                        var sum=0;
+                        sum = this.arr[0].price*((this.num)*1);
+                        return sum;
+
+                    }
+                }
+
+            })
+
+
+
+        </script>
+    </body>
+</html>
