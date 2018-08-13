@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            #dialog-box{
+                width: 400px;
+                height: 300px;
+                background: #cccccc;
+                margin:100px auto;
+            }
+            .title{
+                height: 40px;
+                line-height: 40px;
+                background: pink;
+                margin-bottom: 50px;
+            }
+            .close{
+                float:right;
+            }
+        </style>
+    </head>
+<body>
+    <div id="app">
+        <button @click="login">登录</button>
+        <button @click="reg">注册</button>
+        <my-dialog title="登录" v-show="isLoginShow" @close="close">
+            用户名: <input type="text">
+            <br>
+            密码是: <input type="keyword">
+            <br>
+            <input type="submit">
+        </my-dialog>
+        <my-dialog title="注册" v-show="isRegShow" @close="close">
+            用户名: <input type="text">
+            <br>
+            密码是: <input type="keyword">
+            <br>
+            邮箱是: <input type="text">
+            <br>
+            <input type="submit">
+        </my-dialog>
+    </div>
+    <script type="text/x-template" id="my-dialog">
+        <div id="dialog-box">
+            <div class="title">
+                <span>{{title}}</span>
+                <span class="close" @click="$emit('close')">[X]</span>
+            </div>
+            <div>
+                <slot>
+                    用户名: <input type="text">
+                    <br>
+                    密码是: <input type="keyword">
+                    <br>
+                    <input type="submit">
+                </slot>
+
+            </div>
+        </div>
+
+    </script>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el:"#app",
+            data:{
+                isLoginShow:false,
+                isRegShow:false,
+            },
+            components:{
+                "my-dialog":{
+                    template:'#my-dialog',
+                    props:['title']
+                }
+            },
+
+            methods:{
+                login(){
+                    this. isLoginShow = true;
+                    this. isRegShow= false;
+                },
+                reg(){
+                    this. isLoginShow = false;
+                    this. isRegShow = true;
+                },
+                close(){
+                    this. isLoginShow = false;
+                    this. isRegShow= false;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
