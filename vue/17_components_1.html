@@ -8,19 +8,31 @@
 
     <div id="app">
         <demo1 x-msg="123" :yy="m1">
-
+            <p slot="p1">ppppppp</p>
+            <p slot="p2">p1p1p1p1</p>
         </demo1>
         <demo1 x-msg="456" :yy="m2"></demo1>
     </div>
 
-
+    <script type="text/x-template" id="temp">
+         <div>
+             {{xMsg}} {{yy}}
+             <slot name="p1">
+                 我是默认的pppppp
+             </slot>
+             <slot name="p2">
+                 我是默认的p1p1p1p1
+             </slot>
+             <h1>hhhhhhhh</h1>
+         </div>
+    </script>
     <script src="vue.js"></script>
     <script>
         // Vue.component('demo',{
         //     template:"<h1>hhhhhhhh</h1>"
         // });
 
-       var vm = new Vue({
+        var vm = new Vue({
             el:"#app",
             data:{
                 msg:'333',
@@ -29,7 +41,7 @@
             },
             components:{
                 demo1:{
-                    template:"<div>{{xMsg}} {{yy}}<h1>hhhhhhhh</h1></div>",
+                    template:"#temp",
                     props:['xMsg','yy']
                 }
             }
@@ -46,6 +58,6 @@
         //     }
         // })
 
-    </script>
+</script>
 </body>
 </html>
