@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+<body>
+    <demo></demo>
+    <div id="app">
+        <demo1></demo1>
+    </div>
+    <div id="app2">
+        <demo2></demo2>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        // Vue.component('demo',{
+        //     template:"<h1>hhhhhhhh</h1>"
+        // });
+
+        new Vue({
+            el:"#app",
+            data:{
+
+            },
+            components:{
+                demo1:{
+                    template:"<div>didv1 <h1>hhhhhhhh</h1></div>"
+                }
+            }
+        });
+        // new Vue({
+        //     el:"#app2",
+        //     data:{
+        //
+        //     },
+        //     components:{
+        //         demo2:{
+        //             template:"<div>didv1 <h1>hhhhhhhh</h1></div>"
+        //         }
+        //     }
+        // })
+
+    </script>
+</body>
+</html>
