@@ -2,6 +2,8 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
 import Mine from './views/Mine.vue';
+import Username from './views/Username.vue';
+import Password from './views/Password.vue';
 
 
 Vue.use(Router);
@@ -24,7 +26,17 @@ export default new Router({
     {
         path: '/mine',
         name: 'mine',
-        component: Mine
+        component: Mine,
+        children:[
+            {
+              path:'username',
+              component: Username
+            },
+            {
+                path:'password',
+                component: Password
+            }
+        ]
     }
   ],
 });
