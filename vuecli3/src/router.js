@@ -30,10 +30,11 @@ export default new Router({
         children:[
             {
               path:'username',
+              name:'username',
               component: Username
             },
             {
-                path:'password',
+                path:'password/:name/:age/:email',
                 component: Password
             }
         ]
