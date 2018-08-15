@@ -7,6 +7,7 @@ import Password from './views/Password.vue';
 import Error from './views/Error.vue';
 import Movie from './views/Movie.vue';
 import MovieDetail from './views/MovieDetail.vue';
+import Vuex from './views/Vuex.vue';
 
 Vue.use(Router);
 
@@ -61,6 +62,10 @@ export default new Router({
       {
           path:"/movieDetail/:actor",
           component:MovieDetail
+      },
+      {
+          path:"/vuex",
+          component:Vuex
       }
 
 
