@@ -36,8 +36,19 @@ export default new Router({
             {
                 path:'password/:name/:age/:email',
                 component: Password
-            }
+            },
+
         ]
-    }
+    },
+    {
+      path:'/home',
+      redirect:'/'
+    },
+    {
+        path:'/home/:name/:age/:email',
+        redirect: '/mine/password/:name/:age/:email'
+    },
+
+
   ],
 });

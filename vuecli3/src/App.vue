@@ -3,7 +3,8 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
-      <router-link to="/mine">Mine</router-link>
+      <router-link to="/mine">Mine</router-link> |
+      <router-link to="/home/刘家慧/80/143832583@qq.com">重定向</router-link>
     </div>
     <router-view/>
   </div>
