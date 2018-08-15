@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3>我是组件B</h3>
+        <h3>我是组件B {{msg}}</h3>
     </div>
 </template>
 <script>
