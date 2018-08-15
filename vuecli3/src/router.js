@@ -5,7 +5,8 @@ import Mine from './views/Mine.vue';
 import Username from './views/Username.vue';
 import Password from './views/Password.vue';
 import Error from './views/Error.vue';
-
+import Movie from './views/Movie.vue';
+import MovieDetail from './views/MovieDetail.vue';
 
 Vue.use(Router);
 
@@ -53,6 +54,15 @@ export default new Router({
           path:'*',
           component: Error
       },
+      {
+          path:"/movie",
+          component:Movie
+      },
+      {
+          path:"/movieDetail/:actor",
+          component:MovieDetail
+      }
+
 
 
   ],
