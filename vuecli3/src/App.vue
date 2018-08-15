@@ -6,7 +6,9 @@
       <router-link to="/mine">Mine</router-link> |
       <router-link to="/home/刘家慧/80/143832583@qq.com">重定向</router-link>
     </div>
-    <router-view/>
+    <transition name="fade">
+       <router-view/>
+    </transition>
   </div>
 </template>
 
@@ -27,5 +29,23 @@
       color: #42b983;
     }
   }
+}
+  .fade-enter{
+    opacity: 0;
+  }
+  .fade-enter-active{
+    transition:opacity 1s linear
+  }
+.fade-enter-to{
+  opacity: 1;
+}
+  .fade-leave{
+    transform:translate(0%);
+  }
+.fade-leave-active{
+  transition:transform 1s linear;
+}
+.fade-leave-to{
+  transform:translate(100%);
 }
 </style>

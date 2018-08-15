@@ -4,6 +4,7 @@ import Home from './views/Home.vue';
 import Mine from './views/Mine.vue';
 import Username from './views/Username.vue';
 import Password from './views/Password.vue';
+import Error from './views/Error.vue';
 
 
 Vue.use(Router);
@@ -45,9 +46,13 @@ export default new Router({
       redirect:'/'
     },
     {
-        path:'/home/:name/:age/:email',
-        redirect: '/mine/password/:name/:age/:email'
+          path:'/home/:name/:age/:email',
+          redirect: '/mine/password/:name/:age/:email'
     },
+      {
+          path:'*',
+          component: Error
+      },
 
 
   ],
