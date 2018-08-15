@@ -7,6 +7,7 @@ import Password from './views/Password.vue';
 import Error from './views/Error.vue';
 import Movie from './views/Movie.vue';
 import MovieDetail from './views/MovieDetail.vue';
+import ComponentA from './views/ComponentA.vue';
 import Vuex from './views/Vuex.vue';
 
 Vue.use(Router);
@@ -66,7 +67,12 @@ export default new Router({
       {
           path:"/vuex",
           component:Vuex
-      }
+      },
+      {
+          path:"/componentA",
+          component:ComponentA
+      },
+
 
 
 
