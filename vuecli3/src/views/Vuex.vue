@@ -1,10 +1,12 @@
 <template>
     <div>
         <h1>VUEX  </h1>
-        {{count}}
-        {{msg}}
+       <h1> {{count}}</h1>
+        <h1>{{msg}}</h1>
+        <h1>{{len}}</h1>
+        <h1>{{count100}}</h1>
         <!--{{$store.state.count}}-->
-        {{len}}
+
         <button @click="$store.commit('add',5)">+</button>
         <button @click="$store.commit('sub',3)">-</button>
         <input type="text" v-model="str">
@@ -12,7 +14,7 @@
 
 </template>
 <script>
-    import {mapState} from 'vuex'
+    import {mapState,mapGetters} from 'vuex'
     export default {
         data(){
             return{
@@ -36,7 +38,8 @@
             len(){
                 return this.str.length
             },
-            ...mapState(['count','msg'])
+            ...mapState(['count','msg']),
+            ...mapGetters(['count100']),
         }
 
     }
