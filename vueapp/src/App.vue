@@ -13,22 +13,39 @@
             return {
                 menuList:[{
                     name:'电影',
-                    path:'/movie'
+                    path:'/movie',
+                    bgColor:'#DB7093',
+                    title:'movie'
                 },{
                     name:'音乐',
-                    path:'/music'
+                    path:'/music',
+                    bgColor:'#00BFFF',
+                    title:'music'
                 },{
                     name:'书籍',
-                    path:'/book'
+                    path:'/book',
+                    bgColor:'#5F9EA0',
+                    title:'book'
                 },{
                     name:'图片',
-                    path:'/photo'
-                }]
+                    path:'/photo',
+                    bgColor:'#DC143C',
+                    title:'photo'
+                }],
             }
         },
         components:{
             CommonHeader,
             CommonFooter
+        },
+        created(){
+            var path = this.$route.path;
+            console.log(this.$route);
+            var menu = this.menuList.filter(elem=>{
+                return elem.path == path;
+            })
+            console.log(menu);
+            this.$store.dispatch('changeBg',menu[0]);
         }
 
     }
