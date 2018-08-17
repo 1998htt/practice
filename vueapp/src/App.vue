@@ -40,16 +40,14 @@
         },
         created(){
             var path = this.$route.path;
-            console.log(this.$route);
+            // console.log(this.$route);
             var menu = this.menuList.filter(elem=>{
                 return elem.path == path;
             })
-            console.log(menu);
+            // console.log(menu);
             this.$store.dispatch('changeBg',menu[0]);
         }
-
     }
-
 </script>
 <style lang="scss">
   .content{
