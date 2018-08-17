@@ -21,7 +21,7 @@
         computed:mapState(['bgColor']),
     }
 </script>
-<style lang="scss">
+<style scoped lang="scss">
     .footer {
         height: 1rem;
         width: 100%;
@@ -33,6 +33,7 @@
         display: flex;
         li{
             flex-grow: 1;
+            line-height: 1rem;
             text-align: center;
             a{
                 color:#ccc;
