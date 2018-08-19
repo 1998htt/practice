@@ -16,10 +16,20 @@
         },
         methods:{
             left(){
-                this.index++;
+                if(this.index==23){
+                    this.index=0
+                }else{
+                    this.index++;
+                }
+
             },
             right(){
-                this.index--;
+                if(this.index==0){
+                    this.index=23
+                }else{
+                    this.index--;
+                }
+
             }
         },
         computed:mapState(['photoList'])
