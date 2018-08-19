@@ -15,11 +15,13 @@
           Axios.get('data/photodata.json')
               .then((res)=>{
                   this.photoList = res.data.photoData;
+                  this.$store.dispatch('setPhoto',this.photoList);
               })
       },
       methods:{
           getPhoto(index){
-              this.$router.push('/GetPhoto/'+index);
+              this.$router.push('/getPhoto/'+index);
+
           }
       }
   }
