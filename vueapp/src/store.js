@@ -6,7 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
         bgColor:'rgb(33, 150, 243)',
-        title:'movie'
+        title:'movie',
     },
     mutations: {
         changeBg(state,menu){

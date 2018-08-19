@@ -46,9 +46,13 @@
             })
             // console.log(menu);
             this.$store.dispatch('changeBg',menu[0]);
+        },
+        destroyed(){
+            window.onscroll = null;
         }
     }
 </script>
+
 <style lang="scss">
   .content{
     margin: 1rem 0;

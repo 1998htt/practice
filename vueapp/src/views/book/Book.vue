@@ -32,19 +32,19 @@
   }
 
   .item1 {
-    background: url('http://localhost:8080/img/1.jpg') no-repeat center;
+    background: url('http://localhost:8080/img/11.jpg') no-repeat center;
     background-size:contain;
     color: #fff;
   }
 
   .item2 {
-    background: url('http://localhost:8080/img/3.jpg') no-repeat center;
+    background: url('http://localhost:8080/img/33.jpg') no-repeat center;
     background-size:contain;
     color: #000;
   }
 
   .item3 {
-    background: url('http://localhost:8080/img/2.jpg') no-repeat center;
+    background: url('http://localhost:8080/img/22.jpg') no-repeat center;
     background-size:contain;
     color: #fff;
   }
