@@ -13,13 +13,25 @@
     //     alert(a*b/2);
     // }
 
-    var fn = function(){
-        var a = window.prompt('输入高');
-        var b = window.prompt('输入宽');
-        alert(a*b/2);
-    };//这个函数只能在它后面调用
-    fn();
+    // var fn = function(){
+    //     var a = window.prompt('输入高');
+    //     var b = window.prompt('输入宽');
+    //     alert(a*b/2);
+    // };//这个函数只能在它后面调用
+    // fn();
 
+    // var fn = function(w,h){
+    //     console.log(w*h/2);
+    // }
+    // fn(4,5);
+    // fn(40,70);
+
+    var fn = function(w,h){
+       return w*h/2;
+       console.log(11111)
+     };//函数一旦有返回值，return之后的代码就不执行了
+    var xx = fn(2,4);
+    console.log(xx);
 </script>
 </body>
 </html>
