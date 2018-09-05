@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+                <li v-for="xx in sortArr">
+                    姓名:{{xx.name}} 年龄：{{xx.age}}
+                </li>
+            </ul>
+
+        </div>
+        <script src="vue.js"></script>
+        <script>
+            var vm = new Vue({
+                el:'#app',
+                data:{
+                   arr:[
+                        {name:'zs',age:18},
+                        {name:'ls',age:20},
+                        {name:'htt',age:3}
+                       ]
+                },
+                computed:{
+                    sortArr(){
+                            return this.arr.sort(function(a,b){
+                                return a.age - b.age;
+                            })
+                        }
+                    }
+            })
+        </script>
+
+    </body>
+</html>
