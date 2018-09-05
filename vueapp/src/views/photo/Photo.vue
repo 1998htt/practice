@@ -25,7 +25,9 @@
           }
       }
   }
-</script>l
+</script>
 <style>
-
+.photo img{
+  width: 50%;
+}
 </style>
