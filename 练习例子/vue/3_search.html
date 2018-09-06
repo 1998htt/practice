@@ -3,14 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <title>Title</title>
+        <style>
+            .red{
+                color:red;
+            }
+        </style>
     </head>
     <body>
         <div id="app">
-            <input type="text" v-model="msg">
+            <input type="text" v-model="msg" @keyup="search">
             <button @click="fun">add</button>
             <ul>
-                <li v-for="val in arr">
-                    {{val}}
+                <li v-for="val in showArr" :class="{red:val.active}" @click="val.active = !val.active">
+                    {{val.name}}
                 </li>
             </ul>
 
@@ -22,12 +27,28 @@
                 data:{
                     msg:'',
                     arr:[],
+                    showArr:[],
+                    isRed:false
                 },
                 methods:{
                     fun(){
-                       this.arr.push(this.msg);
+                       this.arr.push({name:this.msg,active:false});
                        this.msg = '';
+                        this.arr.sort(function(a,b){
+                            return a.name - b.name;
+                        });
+                       this.showArr = this.arr;
+
+                    },
+                    search(){
+                        var newArr = this.arr.filter((elem,index)=>{
+                            return elem.name.indexOf(this.msg)!= -1;
+                        });
+                        this.showArr = newArr;
                     }
+
+
+
                 }
             })
 
