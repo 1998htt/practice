@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+            #contain{
+                width: 400px;
+                height: 400px;
+                background: #cccccc;
+                margin:100px auto;
+            }
+            .title{
+                text-align: center;
+            }
+            li{
+                list-style: none;
+                height: 50px;
+                line-height:50px;
+                background: #00ff00;
+                margin-top:10px;
+            }
+            span{
+                float:right;
+            }
+            .red{
+                background: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <div id="contain">
+                <h1 class="title">servies</h1>
+                <ul>
+                    <li v-for="xx in arr" :class="{red:xx.active}" @click="fun(xx)">
+                        {{xx.name}}<span>{{xx.value}}</span>
+                    </li>
+                </ul>
+                total <span>{{msg}}</span>
+            </div>
+
+
+        </div>
+        <script src="vue.js"></script>
+        <script>
+            var vm = new Vue({
+                el:"#app",
+                data:{
+                    msg:0,
+                    arr:[
+                        {
+                            name:'aaa',
+                            value:111,
+                            active:false
+                        },
+                        {
+                            name:'bbb',
+                            value:111,
+                            active:false
+                        },
+                        {
+                            name:'ccc',
+                            value:111,
+                            active:false
+                        },
+                        {
+                            name:'ddd',
+                            value:111,
+                            active:false
+                        },
+                        {
+                            name:'eee',
+                            value:111,
+                            active:false
+                        }
+
+                    ]
+                },
+                methods:{
+                    fun(xx){
+                        xx.active = !xx.active;
+                        if(xx.active){
+                            this.msg += xx.value;
+                        }else{
+                            this.msg -= xx.value;
+                        }
+                    }
+                }
+            })
+
+
+        </script>
+    </body>
+</html>
