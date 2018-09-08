@@ -14,8 +14,17 @@
     <script src="browser.min.js"></script>
     <script type="text/babel">
         //jsx
+        let Welcome = (props)=>{
+            return(
+                <div>
+                    <h1>{props.name}</h1>
+                    <span>{props.age}</span>
+                </div>
+
+            );
+        }
         ReactDOM.render(
-            <h1>hello</h1>,
+           <Welcome name="唯创" age="9"></Welcome>,
             document.getElementById('root')
         );
 
