@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script src="react.development.js"></script>
+<script src="react-dom.development.js"></script>
+<script src="browser.min.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+    class Main extends React.Component{
+        constructor(props) {
+            super(props);
+            this.state = {
+                msg:100,
+                a:100,
+                b:100
+            }
+        }
+        add(num){
+            console.log(num);
+            this.setState({
+                msg:this.state.msg-num,
+                a:this.state.a+num
+
+            })
+            if(this.state.msg <= 0){
+                this.state.msg = 0
+                console.log(1111)
+            }
+
+        }
+        xx(num){
+            console.log(num);
+            this.setState({
+                msg:this.state.msg-num,
+                b:this.state.b+num
+
+            })
+
+        }
+        render(){
+            return (
+                <div>
+                    <span>剩余士兵数量：{this.state.msg}</span>
+                    <Product name="将军a士兵数量："></Product>{this.state.a}
+                    <button onClick={this.add.bind(this,20)}>调兵</button>
+                    <Product name="将军b士兵数量："></Product>{this.state.b}
+                    <button onClick={this.xx.bind(this,10)}>调兵</button>
+                </div>
+            )
+        }
+    }
+    class Product extends React.Component{
+        constructor(props) {
+            super(props);
+        }
+        render(){
+            return (
+                <div>
+                    <span>{this.props.name}</span>
+                </div>
+            )
+        }
+    }
+
+
+    ReactDOM.render(
+        <Main></Main>,
+        document.getElementById('root')
+    )
+
+
+</script>
+</body>
+</html>
