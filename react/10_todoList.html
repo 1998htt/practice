@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        class List extends React.Component{
+            constructor(props){
+                super(props);
+                this.state = {
+                    list:[
+                        {
+                            name:'吃饭'
+                        },
+                        {
+                            name:'睡觉'
+                        },
+                        {
+                            name:'打豆豆'
+                        },
+                    ]
+                }
+            }
+            saveHandle(val){
+                var arr = this.state.list;
+                arr.push({name:val});
+                this.setState({
+                    list:arr
+                })
+            }
+            ww(val){
+                var arr = this.state.list;
+                arr.splice(val,1)
+                this.setState({
+                    list:arr
+                })
+            }
+            render(){
+                return (
+                    <div>
+                        <h2>todoList</h2>
+                        <Save myClick={this.saveHandle.bind(this)}></Save>
+                        <ul>
+                            {
+                                this.state.list.map((item,index)=>{
+                                    return <ListItem index={index} yourClick={this.ww.bind(this)} key={index} item={item}></ListItem>
+                                })
+                            }
+
+                            <li>0已完成/0全部</li>
+                        </ul>
+                    </div>
+                )
+            }
+        }
+        class Save extends React.Component{
+            constructor(props){
+                super(props);
+                this.state = {
+                }
+            }
+            save(){
+                if(this.refs.ipt.value){
+                    this.props.myClick(this.refs.ipt.value);
+                    this.refs.ipt.value = ''
+                }
+                // console.log(this.refs.ipt.value)
+
+
+            }
+            render(){
+                return (
+                    <div>
+                        <div>
+                            <label htmlFor="name">任务</label>
+                            <input id="name" type="text" ref="ipt" placeholder="请输入"></input>
+                            <button onClick={this.save.bind(this)}>保存任务</button>
+                        </div>
+                    </div>
+                )
+            }
+        }
+        class ListItem extends React.Component{
+            constructor(props){
+                super(props);
+                this.state = {
+                }
+            }
+
+            render(){
+                return (
+                    <div>
+                      <li ref="l">
+                          <input type="checkbox"></input>
+                          <span>{this.props.item.name}</span>
+                          <button onClick={
+                              ()=>{
+                                  this.props.yourClick(this.props.index)
+                              }
+                          }>删除</button>
+                      </li>
+                    </div>
+                )
+            }
+        }
+
+
+        ReactDOM.render(
+            <List></List>
+            ,
+            document.getElementById('root')
+        )
+
+    </script>
+</body>
+</html>
