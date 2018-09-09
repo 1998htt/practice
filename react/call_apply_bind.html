@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var obj = {
+            name:'zs'
+        }
+        function a(name,age){
+            console.log(this,name,age);
+        }
+        a.call(obj,'htt',18);
+        a.apply(obj,['ht',19]);
+        a.bind(obj,'h',20)();
+
+
+    </script>
+
+</body>
+</html>

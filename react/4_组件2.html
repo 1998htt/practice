@@ -17,13 +17,18 @@
             super(props)
         }
         render(){
-            return <h1>{this.props.name}</h1>
+            return (
+                <div>
+                    <h1>{this.props.name}</h1>
+                    <p>{this.props.children}</p>
+                </div>
+            )
         }
     }
 
 
     ReactDOM.render(
-        <Welcome name="唯创"></Welcome>,
+        <Welcome name="唯创">666666666</Welcome>,
         document.getElementById('root')
     )
     </script>
