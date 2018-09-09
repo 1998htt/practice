@@ -19,7 +19,7 @@
                     count:0
                 }
             }
-            add(event){
+            add(num,event){
                 this.setState({
                     count:this.state.count+2
                 })
@@ -27,17 +27,17 @@
                 console.log(event.target);
                 console.log(this.refs.btn);
                 console.log(this.refs.h)
+                console.log(num,event)
             }
             render(){
                 return (
                     <div>
-                        <button onClick={this.add.bind(this)} ref="btn">click</button>
+                        <button onClick={this.add.bind(this,6)} ref="btn">click</button>
                         <h1 ref="h">{this.state.count}</h1>
                     </div>
                 )
             }
         }
-
 
         ReactDOM.render(
             <Welcome/>,
