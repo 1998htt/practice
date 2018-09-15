@@ -58,6 +58,19 @@
                 this.setState({
                     list:arr
                 })
+                this.fn();
+            }
+            fn(){
+                let arr = this.state.list;
+                let num = 0;
+                arr.forEach((item)=>{
+                    if(item.isFinished){
+                        num++
+                    }
+                })
+                this.setState({
+                    count:num
+                })
             }
             render(){
                 return (
