@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .selected{
+            background: orangered;
+        }
+    </style>
 </head>
 <body>
     <div id="root"></div>
@@ -14,18 +19,24 @@
             constructor(props){
                 super(props);
                 this.state = {
+                    count:0,
                     list:[
                         {
-                            name:'吃饭'
+                            name:'吃饭',
+                            isFinished:false
                         },
                         {
-                            name:'睡觉'
+                            name:'睡觉',
+                            isFinished:false
                         },
                         {
-                            name:'打豆豆'
+                            name:'打豆豆',
+                            isFinished:false
                         },
-                    ]
+                    ],
+
                 }
+
             }
             saveHandle(val){
                 var arr = this.state.list;
@@ -34,9 +45,16 @@
                     list:arr
                 })
             }
-            ww(val){
-                var arr = this.state.list;
+            del(val){
+               let arr = this.state.list;
                 arr.splice(val,1)
+                this.setState({
+                    list:arr
+                })
+            }
+            changeHanle(index){
+                let arr = this.state.list;
+                arr[index].isFinished = ! arr[index].isFinished;
                 this.setState({
                     list:arr
                 })
@@ -49,11 +67,11 @@
                         <ul>
                             {
                                 this.state.list.map((item,index)=>{
-                                    return <ListItem index={index} yourClick={this.ww.bind(this)} key={index} item={item}></ListItem>
+                                    return <ListItem index={index} yourClick={this.del.bind(this)} key={index} item={item} change={this.changeHanle.bind(this,index)}></ListItem>
                                 })
                             }
 
-                            <li>0已完成/0全部</li>
+                            <li>{this.state.count}已完成/{this.state.list.length}全部</li>
                         </ul>
                     </div>
                 )
@@ -96,8 +114,14 @@
             render(){
                 return (
                     <div>
-                      <li ref="l">
-                          <input type="checkbox"></input>
+                      <li ref="l" className={this.props.item.isFinished ? 'selected':''}>
+                          <input type="checkbox"
+                                 defaultChecked={ this.props.item.isFinished }
+                                 onClick={
+                                     ()=>{
+                                         this.props.change(this.props.index)
+                                     }
+                                 }/>
                           <span>{this.props.item.name}</span>
                           <button onClick={
                               ()=>{
