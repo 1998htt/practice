@@ -1,9 +1,9 @@
-import {creatStore} from 'redux';
+import {createStore} from 'redux';
 
 const inintialState = {
     count:0
 }
-const store = creatStore(()=>{
-    count:0
+const store = createStore(()=>{
+
 },inintialState);
 export default store;
