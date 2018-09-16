@@ -18,7 +18,10 @@ class App extends Component{
     return (
       <div>
           <h1>{this.props.count}</h1>
-          <button onClick = {this.addHandle.bind(this,2)}>click</button>
+          <button onClick={()=>{
+              this.props.add(2)
+          }}>click</button>
+          {/*<button onClick = {this.addHandle.bind(this,2)}>click</button>*/}
       </div>
     )
   }
@@ -31,8 +34,8 @@ const mapStateProps = (state)=>{
 }
 const mapDispatchToProps = (dispatch) =>{
      return{
-         add: ()=>{
-             dispatch(add())
+         add: (num)=>{
+             dispatch(add(num))
          }
 
 
