@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import store from './../store';
-const add = ()=>{
+
+ const add = ()=>{
     console.log('--action');
     return {
         type:'ADD'
