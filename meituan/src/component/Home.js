@@ -59,8 +59,8 @@ export default class Home extends Component{
                     text:"美食"
                 },
                 {
-                    icon:require('./../asset/img/img4.png'),
-                    text:"电影"
+                    icon: require('./../asset/img/img4.png'),
+                    text: "电影"
                 }
             ]
         }
