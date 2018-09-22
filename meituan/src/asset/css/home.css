@@ -1,3 +1,6 @@
+*{
+    touch-action: none;
+}
 .am-navbar-dark{
     background-color: #00bfae;
     color:#fff;
@@ -14,5 +17,12 @@
 }
 .am-grid.am-grid-square .am-grid-item .am-grid-item-inner-content .am-grid-icon {
     margin-top: 9px;
-    width: 64% !important;
+    width: 40% !important;
+    /*优先级最高*/
+}
+.am-grid-text{
+    font-size: 14px;
+}
+.am-grid .am-flexbox .am-flexbox-item .am-grid-item-content .am-grid-item-inner-content .am-grid-text {
+    font-size: 14px;
 }

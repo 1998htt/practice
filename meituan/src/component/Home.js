@@ -71,15 +71,27 @@ export default class Home extends Component{
 
                 <NavBar
                     mode="dark"
-                    leftContent="Back"
+                    leftContent="哈尔滨"
                     rightContent={[
                         <Icon key="0" type="search" style={{ marginRight: '16px' }} />,
                         <Icon key="1" type="ellipsis" />,
                     ]}
                 >
-                <SearchBar placeholder="Search" />
+                <SearchBar placeholder="输入搜索内容" />
                 </NavBar>
-                <Grid data={this.state.data} isCarousel columnNum={5} />
+                <Grid data={this.state.data} isCarousel columnNum={5} hasLine={false} />
+                <div>
+                    <div>
+
+                    </div>
+                    <div>
+
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+
             </div>
         )
     }
