@@ -80,16 +80,29 @@ export default class Home extends Component{
                 <SearchBar placeholder="输入搜索内容" />
                 </NavBar>
                 <Grid data={this.state.data} isCarousel columnNum={5} hasLine={false} />
-                <div>
-                    <div>
-
+                <div id="wapper">
+                    <div className="nav">
+                        <div className="header">
+                            <h3 className="title color1">我们约会吧</h3>
+                            <p className="txt">恋人家人好朋友</p>
+                        </div>
+                        <img className="img" src={require('./../asset/img/activity1.png')} alt=""/>
                     </div>
-                    <div>
-
+                    <div className="nav">
+                        <div className="header">
+                            <h3 className="title color2">低价超值</h3>
+                            <p className="txt">十元惠生活</p>
+                        </div>
+                        <img className="img" src={require('./../asset/img/activity2.jpg')} alt=""/>
                     </div>
-                    <div>
-
+                    <div className="nav">
+                        <div className="header">
+                            <h3 className="title color3">工作简餐</h3>
+                            <p className="txt">实惠方便选择多</p>
+                        </div>
+                        <img className="img" src={require('./../asset/img/activity3.png')} alt=""/>
                     </div>
+                   
                 </div>
 
             </div>
