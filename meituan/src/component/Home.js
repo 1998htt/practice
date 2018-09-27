@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { NavBar, Icon, SearchBar,Grid} from 'antd-mobile';
 import './../asset/css/home.css';
+import Container from './Container';
+import Product from './Product';
+import 'whatwg-fetch';
 export default class Home extends Component{
     constructor(props){
         super(props)
@@ -62,8 +65,20 @@ export default class Home extends Component{
                     icon: require('./../asset/img/img4.png'),
                     text: "电影"
                 }
-            ]
+            ],
+            product:[]
         }
+    }
+    componentWillMount(){
+        fetch('http://www.xiechenxi.cn/')
+            .then((response) => {
+                return response.json()
+            }).then((data) => {
+            this.setState({
+                product:data
+            })
+            console.log(data)
+        })
     }
     render(){
         return(
@@ -104,6 +119,15 @@ export default class Home extends Component{
                     </div>
                    
                 </div>
+
+                <Container title="猜你喜欢">
+                    {
+                        this.state.product.map((elem,index)=>{
+                            return <Product key={elem.product_id} elem={elem}></Product>
+                        })
+                    }
+
+                </Container>
 
             </div>
         )
