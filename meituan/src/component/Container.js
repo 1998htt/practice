@@ -5,7 +5,6 @@ export default class Container extends Component {
         super(props);
         
     }
-    
     render() {
         return (
             <div className="container">
