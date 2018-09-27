@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavBar, Icon, SearchBar,Grid} from 'antd-mobile';
+import { NavBar, Icon, SearchBar,Grid,Flex,WhiteSpace} from 'antd-mobile';
 import './../asset/css/home.css';
 import Container from './Container';
 import Product from './Product';
@@ -95,31 +95,37 @@ export default class Home extends Component{
                 <SearchBar placeholder="输入搜索内容" />
                 </NavBar>
                 <Grid data={this.state.data} isCarousel columnNum={5} hasLine={false} />
-                <div id="wapper">
-                    <div className="nav">
-                        <div className="header">
-                            <h3 className="title color1">我们约会吧</h3>
-                            <p className="txt">恋人家人好朋友</p>
+                <WhiteSpace size="lg"></WhiteSpace>
+                <Flex>
+                    <Flex.Item>
+                        <div className="nav">
+                            <div className="header">
+                                <h4 className="title color1">我们约会吧</h4>
+                                <p className="text">恋人家人好朋友</p>
+                            </div>
+                            <img className="img" src={require('./../asset/img/activity1.png')} alt=""/>
                         </div>
-                        <img className="img" src={require('./../asset/img/activity1.png')} alt=""/>
-                    </div>
-                    <div className="nav">
-                        <div className="header">
-                            <h3 className="title color2">低价超值</h3>
-                            <p className="txt">十元惠生活</p>
+                    </Flex.Item>
+                    <Flex.Item>
+                        <div className="nav">
+                            <div className="header">
+                                <h4 className="title color2">低价超值</h4>
+                                <p className="text">十元惠生活</p>
+                            </div>
+                            <img className="img" src={require('./../asset/img/activity2.jpg')} alt=""/>
                         </div>
-                        <img className="img" src={require('./../asset/img/activity2.jpg')} alt=""/>
-                    </div>
-                    <div className="nav">
-                        <div className="header">
-                            <h3 className="title color3">工作简餐</h3>
-                            <p className="txt">实惠方便选择多</p>
+                    </Flex.Item>
+                    <Flex.Item>
+                        <div className="nav">
+                            <div className="header">
+                                <h4 className="title color3">工作简餐</h4>
+                                <p className="text">实惠方便选择多</p>
+                            </div>
+                            <img className="img" src={require('./../asset/img/activity3.png')} alt=""/>
                         </div>
-                        <img className="img" src={require('./../asset/img/activity3.png')} alt=""/>
-                    </div>
-                   
-                </div>
-
+                    </Flex.Item>
+                </Flex>
+                <WhiteSpace size="lg"></WhiteSpace>
                 <Container title="猜你喜欢">
                     {
                         this.state.product.map((elem,index)=>{

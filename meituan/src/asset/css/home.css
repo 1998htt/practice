@@ -1,7 +1,4 @@
-*{
-    touch-action: none;
-}
-.am-navbar-dark{
+.am-navbar-light{
     background-color: #00bfae;
     color:#fff;
 }
@@ -15,44 +12,52 @@
 .am-search-cancel{
     color:#fff;
 }
-.am-grid.am-grid-square .am-grid-item .am-grid-item-inner-content .am-grid-icon {
-    margin-top: 9px;
-    width: 40% !important;
-    /*优先级最高*/
+/*Gird */
+
+.am-grid.am-grid-square .am-grid-item .am-grid-item-inner-content .am-grid-icon{
+    width:63% !important;
 }
-.am-grid-text{
-    font-size: 14px;
+.am-grid .am-flexbox .am-flexbox-item .am-grid-item-content .am-grid-item-inner-content .am-grid-text{
+    font-size:16px;
 }
-.am-grid .am-flexbox .am-flexbox-item .am-grid-item-content .am-grid-item-inner-content .am-grid-text {
-    font-size: 14px;
+
+/*Flex*/
+.am-flexbox.am-flexbox-align-center{
+    background: #fff;
+    text-align: center;
+
 }
-#wapper{
-    background: #ffffff;
-    margin-top:12px;
-}
-#wapper .color1{
+/*#wapper{*/
+    /*background: #ffffff;*/
+    /*margin-top:12px;*/
+/*}*/
+.header .color1{
     color:green;
 }
-#wapper .color2{
+.header .color2{
     color:red;
 }
-#wapper .color3{
+.header .color3{
     color:deeppink;
 }
-#wapper .title{
-    text-align: center;
+.nav img{
+    width: 120px;
+    height: 120px;
 }
-#wapper .txt{
-    text-align: center;
-}
-#wapper .header{
-    width: 125px;
-}
-#wapper img{
-    width: 100px;
-    height: 100px;
-    padding-left:12px;
-}
-#wapper .nav{
-    float:left;
-}
+/*#wapper .title{*/
+    /*text-align: center;*/
+/*}*/
+/*#wapper .txt{*/
+    /*text-align: center;*/
+/*}*/
+/*#wapper .header{*/
+    /*width: 125px;*/
+/*}*/
+/*#wapper img{*/
+    /*width: 100px;*/
+    /*height: 100px;*/
+    /*padding-left:12px;*/
+/*}*/
+/*#wapper .nav{*/
+    /*float:left;*/
+/*}*/
