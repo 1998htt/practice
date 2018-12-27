@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input id="ipt" type="text">
+    <input type="button" value="确定" id="btn">
+    <script>
+        var i = document.getElementById("ipt");
+        var b = document.getElementById("btn");
+        b.onclick = function(){
+            if(i.value==""){
+                alert("文本内容为空，请输入内容")
+            }
+        }
+    </script>
+</body>
+</html>
