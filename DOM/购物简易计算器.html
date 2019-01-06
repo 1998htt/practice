@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            div{
+               text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+    <div>
+        <h2>购物简易计算器</h2>
+        第一个数: <input type="text" id="ipt1"/>
+        第二个数: <input type="text" id="ipt2"/></br>
+        <button id="btn1">+</button>
+        <button id="btn2">-</button>
+        <button id="btn3">*</button>
+        <button id="btn4">/</button>
+        <button id="btn5">清空</button>
+        计算结果: <input type="text" id="ipt3"/>
+    </div>
+
+        <script>
+            i = document.getElementById("ipt1");
+            j = document.getElementById("ipt2");
+            r = document.getElementById("ipt3");
+            q = document.getElementById("btn1");
+            t = document.getElementById("btn2");
+            n = document.getElementById("btn3");
+            p = document.getElementById("btn4");
+            h = document.getElementById("btn5");
+           q.onclick = function(){
+                s = parseInt(i.value)+parseInt(j.value);
+                r.value = s.toString();
+            };
+            t.onclick = function(){
+                s = parseInt(i.value)-parseInt(j.value);
+                r.value = s.toString();
+            };
+            n.onclick = function(){
+                s = parseInt(i.value)*+parseInt(j.value);
+                r.value = s.toString();
+            };
+            p.onclick = function(){
+                s = parseInt(i.value)/parseInt(j.value);
+                r.value = s.toString();
+            };
+            h.onclick = function(){
+                r.value = "";
+                i.value = "";
+                j.value = "";
+            };
+
+        </script>
+    </body>
+</html>

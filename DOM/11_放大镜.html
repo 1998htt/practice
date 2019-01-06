@@ -1,92 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Title</title>
-        <style>
-            *{
-                margin:0;
-                padding:0;
-            }
-            #glass .slide{
-                width: 200px;
-                height: 200px;
-                background: #cccccc;
-                opacity: .5;
-                position :absolute;
-                left:0;
-                top:0;
-                display:none;
-                cursor:move;
-            }
-            #glass{
-                float:left;
-                position: relative;
-                margin-right: 20px;
-            }
-            #big{
-                width: 400px;
-                height: 400px;
-                overflow:hidden;
-                display:none;
-                position:relative;
-            }
-            #big img{
-                position:absolute;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="glass">
-            <img src="img/1.jpg" alt="">
-            <div class="slide" id="grade">
-
-            </div>
-        </div>
-        <div id="big">
-            <img src="img/2.jpg" alt="">
-        </div>
-        <script>
-            var oGrade=document.getElementById('grade');
-            var oGlass=document.getElementById('glass');
-            var oBig=document.getElementById('big');
-            var oBigImg = oBig.getElementsByTagName('img');
-            oGlass.onmouseover = function(){
-                oGrade.style.display='block';
-                oBig.style.display='block';
-                oGlass.onmousemove = function(e){
-                    var l=e.clientX-oGrade.offsetWidth/2;
-                    var t=e.clientY-oGrade.offsetHeight/2;
-                    if(l>oGlass.offsetWidth-oGrade.offsetWidth){
-                        l=oGlass.offsetWidth-oGrade.offsetWidth
-                    }else if(l<0){
-                        l=0;
-                    }
-                    if(t>oGlass.offsetHeight-oGrade.offsetHeight){
-                        t=oGlass.offsetHeight-oGrade.offsetHeight;
-                    }else if(t<0){
-                        t= 0;
-                    }
-
-                    var x = l/ (oGlass.offsetWidth - oGrade.offsetWidth);
-                    var bigX = x * (oBigImg.offsetWidth - oBig.offsetWidth);
-
-                    var y = t / (oGlass.offsetHeight - oGrade.offsetHeight);
-                    var bigY = y * (oBigImg.offsetHeight - oBig.offsetHeight);
-
-                    oBigImg.style.left = -bigX +'px';
-                    oBigImg.style.top = -bigY +'px';
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #small,#big{
+            width: 400px;
+            height: 400px;
+            float: left;
+            overflow: hidden;
+            position: relative;
+            cursor: move;
+        }
+        #big{
+            display: none;
+        }
+        #drag{
+            width: 200px;
+            height: 200px;
+            background: #ccc;
+            position: absolute;
+            top:0;
+            left:0;
+            opacity: .5;
+            display: none;
+        }
+        #big img{
+            position: absolute;
+        }
 
 
-                    oGrade.style.left =l + 'px';
-                    oGrade.style.top = t + 'px';
-                }
-            }
-            oGlass.onmouseout = function(){
-                oGrade.style.display='none';
-                oBig.style.display='none';
+    </style>
+</head>
+<body>
+<div id="small">
+    <img src="img/1.jpg" alt="">
+    <div id="drag">
 
+    </div>
+</div>
+<div id="big">
+    <img src="img/2.jpg" alt="">
+</div>
+<script>
+
+    var oSmall = document.getElementById('small');
+    var oDrag = document.getElementById('drag');
+    var oBig = document.getElementById('big');
+    var oBigImg = oBig.getElementsByTagName('img')[0];
+
+    oSmall.onmouseover = function () {
+        oDrag.style.display = 'block';
+        oBig.style.display = 'block';
+        oSmall.onmousemove = function (e) {
+            e = e || window.event;
+
+            var disX = e.clientX - oDrag.offsetWidth / 2;
+            var disY = e.clientY - oDrag.offsetHeight / 2;
+
+            if(disX > oSmall.offsetWidth - oDrag.offsetWidth){
+                disX = oSmall.offsetWidth - oDrag.offsetWidth
+            }else if(disX < 0){
+                disX = 0;
             }
-        </script>
-    </body>
+
+            if(disY > oSmall.offsetHeight - oDrag.offsetHeight){
+                disY = oSmall.offsetHeight - oDrag.offsetHeight
+            }else if(disY < 0){
+                disY = 0;
+            }
+
+
+            var xxx = disX / (oSmall.offsetWidth - oDrag.offsetWidth);
+            var bigX = xxx * (oBigImg.offsetWidth - oBig.offsetWidth);
+
+            var yyy = disY / (oSmall.offsetHeight - oDrag.offsetHeight);
+            var bigY = yyy * (oBigImg.offsetHeight - oBig.offsetHeight);
+
+//                  xxx / oBigImg.offsetWidth - oBig.offsetWidth
+
+            oBigImg.style.left = -bigX +'px';
+            oBigImg.style.top = -bigY +'px';
+
+
+
+            oDrag.style.left = disX + 'px';
+            oDrag.style.top = disY + 'px';
+
+        }
+
+
+
+    }
+
+
+    oSmall.onmouseout = function () {
+        oDrag.style.display = 'none';
+        oBig.style.display = 'none';
+    }
+</script>
+</body>
 </html>
