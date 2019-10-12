@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function count(str){
+            var obj = {};
+            var maxchar = null;
+            var max = 0;
+            for(var i=0;i<str.length;i++){
+                var char = str.charAt(i);
+                if(obj[char]){
+                    obj[char]++;
+                }else{
+                    obj[char] = 1;
+                }
+
+            }
+            for(var k in obj){
+                if(max < obj[k]){
+                    max = obj[k];
+                    maxchar = k;
+                }
+            }
+
+            alert("出现的最多是" + maxchar);
+            alert("总共出现的次数" + max);
+
+        }
+        var str ='abcaaaaasss';
+        count(str) ;
+    </script>
+</body>
+</html>
+var str = readline();
+var obj = {};
+for(let i = 0;i < str.length;i++){
+var char = str.charAt(i);
+if(obj[char]){
+obj[char]++;
+}else{
+obj[char] = 1;
+}
+
+}
+var maxchar = null;
+var max = 0
+for(let k in obj){
+if(max < obj[k]){
+max = obj[k];
+maxchar = k;
+}
+}
+print(maxchar+' 'max)

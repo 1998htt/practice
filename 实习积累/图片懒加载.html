@@ -1,10 +1,92 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+    <style>
+        .container{
+            max-width: 800px;
+            margin:0 auto;
+        }
+        .container:after{
+            content:"";
+            display: block;
+            clear:both;
+        }
+        .container img{
+            width:50%;
+            height:260px;
+            float:left;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div class="container">
+
+    <img src="http://s4.sinaimg.cn/mw690/006uWPTUgy72CNFYNjB93&690" alt="1" data-src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2728526866,1225713124&fm=26&gp=0.jpg">
+    <img src="http://s4.sinaimg.cn/mw690/006uWPTUgy72CNFYNjB93&690" alt="1" data-src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3478062922,924465454&fm=26&gp=0.jpg">
+    <img src="http://s4.sinaimg.cn/mw690/006uWPTUgy72CNFYNjB93&690" alt="1" data-src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3920808022,3591514603&fm=26&gp=0.jpg">
+    <img src="http://s4.sinaimg.cn/mw690/006uWPTUgy72CNFYNjB93&690" alt="1" data-src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1365897783,3177600725&fm=26&gp=0.jpg">
+    <img src="http://s4.sinaimg.cn/mw690/006uWPTUgy72CNFYNjB93&690" alt="1" data-src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1022181213,1852924455&fm=26&gp=0.jpg">
+    <img src="http://s4.sinaimg.cn/mw690/006uWPTUgy72CNFYNjB93&690" alt="1" data-src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=362621772,562005124&fm=26&gp=0.jpg">
+    <img src="http://s4.sinaimg.cn/mw690/006uWPTUgy72CNFYNjB93&690" alt="1" data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=4122850430,2608287329&fm=26&gp=0.jpg">
+    <img src="http://s4.sinaimg.cn/mw690/006uWPTUgy72CNFYNjB93&690" alt="1" data-src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2009257569,1351140751&fm=26&gp=0.jpg">
+    <img src="http://s4.sinaimg.cn/mw690/006uWPTUgy72CNFYNjB93&690" alt="1" data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2069288295,2283909010&fm=26&gp=0.jpg">
+    <img src="http://s4.sinaimg.cn/mw690/006uWPTUgy72CNFYNjB93&690" alt="1" data-src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=246540373,1934700635&fm=26&gp=0.jpg">
+    <img src="http://s4.sinaimg.cn/mw690/006uWPTUgy72CNFYNjB93&690" alt="1" data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=373023155,3084789952&fm=26&gp=0.jpg">
+    <img src="http://s4.sinaimg.cn/mw690/006uWPTUgy72CNFYNjB93&690" alt="1" data-src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1096858700,1644673808&fm=26&gp=0.jpg">
+    <img src="http://s4.sinaimg.cn/mw690/006uWPTUgy72CNFYNjB93&690" alt="1" data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=691665888,1908101319&fm=26&gp=0.jpg">
+    <img src="http://s4.sinaimg.cn/mw690/006uWPTUgy72CNFYNjB93&690" alt="1" data-src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2725048848,1473157250&fm=26&gp=0.jpg">
+</div>
+
+<script>
+    //jquery中lazyload插件
+
+    // <img class="lazy" src="" data-original="图片地址" width="100" height="100" alt="">
+    // $("img.lazy").lazyload({
+    //     threshold : 200, // 设置阀值
+    //     effect : "fadeIn" // 设置图片渐入特效
+    // });
+
+// 一开始没有滚动的时候，出现在视窗中的图片也会加载
+    start();
+
+    // 当页面开始滚动的时候，遍历图片，如果图片出现在视窗中，就加载图片
+    var clock; //函数节流
+    $(window).on('scroll',function(){
+        if(clock){
+            clearTimeout(clock);
+        }
+        clock = setTimeout(function(){
+            start()
+        },200)
+    })
+
+    function start(){
+        $('.container img').not('[data-isLoading]').each(function () {
+            if (isShow($(this))) {
+                loadImg($(this));
+            }
+        })
+    }
+
+
+    // 判断图片是否出现在视窗的函数
+    function isShow($node){
+        return $node.offset().top <= $(window).height()+$(window).scrollTop();
+    }
+
+    // 加载图片的函数，就是把自定义属性data-src 存储的真正的图片地址，赋值给src
+    function loadImg($img){
+        $img.attr('src', $img.attr('data-src'));
+
+        // 已经加载的图片，我给它设置一个属性，值为1，作为标识
+        // 弄这个的初衷是因为，每次滚动的时候，所有的图片都会遍历一遍，这样有点浪费，所以做个标识，滚动的时候只遍历哪些还没有加载的图片
+        $img.attr('data-isLoading',1);
+    }
+
+</script>
 </body>
 </html>

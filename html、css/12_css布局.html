@@ -2,9 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+早期以table为主（简单）
+后来以技巧性布局为主（难）
+现在有flexbox/grid
+响应式布局
+
+
+常用布局方法
+table表格布局
+float+margin布局
+inline-block布局
+flexbox布局
+
+css
+border-collapse:collapse;为表格设置合适的border
+display：table/table-cell等让元素展现为表格布局
+盒模型：content+padding+border+margin
+width和height只对内容生效
+
+display
+block/inline/inline-block
+
+position
+static/fixed/relative/absolute
+z-index只有定位了才好使
+
+flexbox弹性盒子,有兼容问题，IE完全不支持，其他浏览器也是支持不同的flex版本，所以使用时得写兼容
+盒子本来就是并列的
+指定宽度即可
+父元素: display:flex
+子元素: flex:1
+box设置固定宽度:width:200px;flex:none
+
+float:脱离文档流但不脱离文本流
+对自身的影响：形成‘块’BFC/位置尽量靠上，尽量靠左
+对兄弟的影响：
+对父级元素的影响：高度塌陷
+
+inline-block
+有间隙:将父元元素font-size：0;其他子元素font-size再设置
+
+响应式布局
+主要方法：隐藏+折行+自适应空间
 </body>
 </html>

@@ -5,6 +5,20 @@
     <title>Title</title>
 </head>
 <body>
-aaaaaaaaaaaaaaa
+<script>
+    function idIp(ip){
+        var exp = /^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/;
+        var flag = ip.match(exp);
+        if(flag != undefined && flag!=""){
+            print('IPV4');
+        }else if(ip.match(/:/g).length<=7&&/::/.test(ip)?/^([\da-f]{1,4}(:|::)){1，6}[\da-f]{1,4}$/i.test(ip):/^([\da-f]{1,4}:){7}[\da-f]{1,4}$/i.test(ip)){
+            print('IPV6');
+        }else{
+            print('Neither');
+
+        }
+    }
+
+</script>
 </body>
 </html>

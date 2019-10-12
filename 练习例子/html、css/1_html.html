@@ -3,8 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+   <style>
+        
+   </style>
 </head>
 <body>
-    hello word
+<script>
+
+    setTimeout(function() {
+
+        Promise.resolve().then(function () {
+            console.log(3);
+        }).then(function () {
+            console.log(4);
+        });
+
+        console.log(2);
+
+    });
+
+
+</script>
 </body>
 </html>
