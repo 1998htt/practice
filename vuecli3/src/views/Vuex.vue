@@ -5,6 +5,7 @@
         <h1>{{msg}}</h1>
         <h1>{{len}}</h1>
         <h1>{{count100}}</h1>
+        <h2>{{yy}}</h2>
         <!--{{$store.state.count}}-->
 
         <button @click="$store.commit('add',5)">+</button>
@@ -26,7 +27,7 @@
         //         return this.$store.state.count
         //     }
         // }
-
+  
         // computed:mapState({
         //     count:state=>state.count,
         //     yy:state=>state.msg,
@@ -40,6 +41,16 @@
             },
             ...mapState(['count','msg']),
             ...mapGetters(['count100']),
+            yy() {
+                return this.$store.getters.count100
+            }
+        },
+        mounted() {
+            console.log(this.$store)
+            // setInterval(()=>{
+            //     this.$store.commit('add',10);
+
+            // },1000)
         }
 
     }

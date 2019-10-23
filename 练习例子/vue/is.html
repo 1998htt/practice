@@ -1,0 +1,41 @@
+<html>
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ </head>
+<body>
+ <div id='app'>
+  <!--v-for循环普通数组-->
+  
+  <!--注意：v-for循环的时候，key属性只能使用number或string -->
+  <!--注意：key使用的时候，必须使用v-bind绑定属性的形式，指定key的值 -->
+  <!-- 在组件中，使用 v-for循环的时候，或者在一些特殊情况中，如果v-for有问题，
+   必须在使用v-for的同时，指定唯一的 字符串/数字 类型:key 值-->
+  <button @click="add">点击</button>
+  <component :is="name">hhh</component>
+  <!-- 含义一样 -->
+  <table>
+    <my-row>...</my-row>
+  </table>
+
+  <table>
+    <tr is="my-row"></tr>
+  </table>
+
+   
+ </div>
+</body>
+<script src="vue.js"></script>
+<script>
+ var vm = new Vue({
+  el:'#app',
+  data:{
+   name:false,
+  },
+  methods:{
+   add(){
+     this.name = true
+   }
+  }
+ });
+</script>
+</html>

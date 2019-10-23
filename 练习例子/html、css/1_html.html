@@ -9,20 +9,34 @@
 </head>
 <body>
 <script>
+    // for in 循环对象的属性
+    let obj = {
+        name:{
+            xx:"htt",
+        },
+        age:"11"
+    }
+    for(var i in obj){
+        console.log(i);
+    }
 
-    setTimeout(function() {
-
-        Promise.resolve().then(function () {
-            console.log(3);
-        }).then(function () {
-            console.log(4);
-        });
-
-        console.log(2);
-
-    });
-
-
+    for(let i=0;i<5;i++) {
+        console.log(i);
+        if(i===3){
+            continue;
+        }
+    }
+    // 使用with关联obj对象，剩的多次用obj，不建议使用，因为使用会导致性能下降
+   with(obj){
+       var s = name.xx;
+       var c = age;
+       console.log(s,c);
+   }
+   
+   function fn(){
+       console.log(arguments.length);
+   }
+   fn(3,1)
 </script>
 </body>
 </html>

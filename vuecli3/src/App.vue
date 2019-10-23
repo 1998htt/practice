@@ -8,6 +8,7 @@
       <router-link to="/movie">电影列表</router-link> |
       <router-link to="/componentA">componentA</router-link> |
       <router-link to="/vuex">VueX</router-link> |
+       <router-link to="/before">路由首位</router-link> |
     </div>
     <transition name="fade">
        <router-view/>

@@ -21,7 +21,7 @@ export default new Vuex.Store({
   },
   getters:{
     count100:(state)=>{
-      return state.count+100
+      return state.count+200
     }
   },
 });

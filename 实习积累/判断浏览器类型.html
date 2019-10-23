@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<h1 >hhhh</h1>
+    <script>
+        (function fn() {
+            var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+            console.log(userAgent,'kk');
+        
+            //判断是否chorme浏览器
+            if (userAgent.indexOf("Chrome") > -1){
+                window.location.href='http://www.baidu.com'
+                alert('该浏览器不支持，请下载谷歌浏览器');
+               
+            }
+            //判断是否Safari浏览器
+        
+        })()
+        // var x = fn();
+        // console.log(x,'类型');
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    ctx.req.on('data',chunk=>{
+        data+=chunk;
+    })
+    ctx.req.on('end',()=>{
+        data = decodeURI(data)
+    })
+    ctx.body = 'xxx'//必须要有，否则返回404
+
+    中间件
+    npm koa-nodyparser
+    const bodyparser = require('koa-bodyparser');
+    app.use(bodyparser());
+    app.use(async xxx = >{
+        let data = ctx.request.body;
+        ctx.body = data
+        data是一个对象形式，这样后台接收参数时就好多了
+    })
+
+    koa-router
+    npm install koa-router --save
+
+    const Router = require('ka-router');
+    const router = new Touter();
+    router.get('/abc',(ctx,next)=>{
+             
+    })
+    app.use(router.routes());
+    app.use(router.allowenMethods());
+
+    //路由前缀
+    const router = new Router({
+        prefix: '/weichuang'
+    })
+     
+    
+</script>
+</body>
+</html>

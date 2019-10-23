@@ -9,6 +9,7 @@ import Movie from './views/Movie.vue';
 import MovieDetail from './views/MovieDetail.vue';
 import ComponentA from './views/ComponentA.vue';
 import Vuex from './views/Vuex.vue';
+import BeforeRoute from './views/BeforeRoute'
 
 Vue.use(Router);
 
@@ -66,12 +67,20 @@ export default new Router({
       },
       {
           path:"/vuex",
-          component:Vuex
+          component:Vuex,
+          name:"vuex"
       },
       {
           path:"/componentA",
-          component:ComponentA
+          component:ComponentA,
+          name:"componentA",
       },
+      {
+        path:"/before",
+        component:BeforeRoute,
+        name:"beforeroute"
+      }
+    
 
 
 
