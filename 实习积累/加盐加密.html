@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body> 
+    <script>
+    一般后端判断：在给密码插入数据库之前先加盐
+    随机生成salt，10是迭代次数
+    bcryct.getSalt(10,(err,salt)=>{
+         bcryct.hash(this.password,salt,(err,hash)=>{ })
+    })
+    Promise
+    new Promise((reslove,reject)=>{
+        setTimeout(()=>{
+            resolve()
+        },1000)
+    }).then()
+    css两行就换成...
+
+
+    this.route.push('/xx/:id')//接受参数   
+    this.$router.push(`detali/${id}`)//传递参数
+    this.$router.push(//传递参数
+        name:detail,
+        params:{
+            id:id
+        }
+    })
+    接受参数：this.$route.params.id  这种方式传参刷新之后URL参数没有了 
+
+    this.$router.push({//传递参数
+        path:'/detail',
+        query:{
+            id:id
+        }
+    })
+    接受参数：this.$route.query.id 这种方式传参类似于get 刷新之后url参数还有
+    $rouute.go(-1)返回上一个
+
+    有些路由里面有footer-bar 有的没有footer-bar怎么写： 
+    <router-view name="footer-bar"/> 
+    在router.js里配置 components：{
+        default:Home,
+        'footer-bar':FooterBar
+    }
+
+    检查用户是否登录 前端vuex保存登录状态
+    如何判断一个对象是一个空对象
+    JSON.stringify(xx)==='{}'
+
+    刷新页面默认选中footer-bar：用本地存储处理
+
+    // 缓存路由组件
+    点击烘干机在点击其他页面返回时仍然选中烘干机：<keep-alive>
+                                                <router-view v-if="$route.meta,keeAlive "/>
+                                              </keep-alive>这种方法是所有的页面都被缓存
+                                              <router-view v-if="!$route.meta,keeAlive "/>
+    指定特定的页面：在router里设置meta:{keepAlive:true/false} 
+
+    // 路由懒加载
+    用到的组件才会加载在 route.js里配置: let Home = ()=> import('./views/Home.vue')都配置成这样
+
+    // 错误页面提示404
+    单独写一个组件 在router.js里配置 {path:'*',component:Error}
+
+    // UI库按需加载 
+    vant等组件库
+
+    // 打包
+    npm run build
+    打包之后有一个.map文件 
+
+    在vue.config.js里配置  moudle.exports = {
+        productionSourceMap:false
+    }删除.map文件
+
+</script>
+</body>
+</html>

@@ -1,16 +1,17 @@
-const path = require('path');//webpack自带path模块
+const path = require('path'); //webpack自带path模块 引入一个模块
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require("extract-text-webpack-plugin");
 module.exports = {
+    productionSourceMap: process.env.NODE_ENV === "production" ? false : true,//设置显不显示map文件
     mode:"development",
-    entry:{
+    entry:{//入口文件的配置
         'index': "./src/index.js",
         'index2':"./src/index2.js"
     },
-    output:{
+    output:{//出口文件的配置
         path:path.resolve(__dirname,'dist'),
-        filename:'[name].js',
+        filename:'[name].js',//输出的文件名
         publicPath:'http://127.0.0.1:8080/'
     },
     module:{
