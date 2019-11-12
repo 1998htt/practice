@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="leaflet.css">
+    <script src="leaflet-src.js"></script>
+    <style>
+        #map{
+            width: 100%;
+            height:calc(100vh);
+        }
+    </style>
+</head>
+<body onload="initMap()">
+    <div id="map"></div>
+    <script>
+         //经度和纬度是反着的
+        function initMap() {
+            var map = L.map('map', { 
+                center:[39.910864,116.481736],
+                zoom:13,
+                // zoomControl:false 设置zoom显不显示
+            });
+            // var map = L.map('map').setView([39.910864,116.481736])
+            L.tileLayer( "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=4064628556,3218029601&fm=26&gp=0.jpg",{
+                attribution: '',
+                maxZoom:18,
+                subdomains:["1","2","3","4"]
+
+            }).addTo(map); 
+            //maker popup tooltip 针对于点位API
+            //maker
+            var latlng = [39.910864,116.481736];
+            var group = L.layerGroup()
+            for(let i=0;i<50;i++){
+                var lat = lanlng[0]+Math.random();
+                var lng = latlng[1] + Math.random();
+                var maker = L.marker([lat,lng],{
+                    draggable:true,//可拖拽
+                    keyboard:true, //可以调到下一个maker
+                    zIndexOffset:0,//zindex
+                    opacity:0,//透明度
+                    riseOnHover:true,//鼠标放上去的时候突出显示
+                    pane:"markerPane",//给这些点位放在哪里
+                    interactive:false, //只支持map mousedown  true支持 map mousedown和marker mousedown
+                    attribution:"我是一个marker"
+                }).addTo(map);
+            }
+            }
+            //popup  或者 marker.bindPopup('内容').openpopup()
+            var popup = L.popop({
+                closeButton:  true/false,
+                closeOnClick: true/false,
+                autoPan: true/false,
+                autoPanPaddingTopLeft: L.point(150,150),//上下150
+                className:"xx"//类名
+            }).setContent('这是一个popup')  
+            marker.on('popupopen',function(){
+                console.log("popupopen",this.getPopup().getContent())
+            })
+            marker.on('popupclose',function(){
+                console.log("popupopen",this.getPopup().getContent())
+            })
+            
+            //tooltip
+
+            var tooltip = L.tooltip({
+                permanent: true,//提示全部显示
+                direction: buttom,//显示位置
+                interactive:false,//鼠标不可点击
+            }).setContent('这是tooltip')
+            marker.on('tooltipopen',function(){
+                console.log("tooltipopen",this.getPopup().getContent())
+            })
+            marker.on('tooltipclose',function(){
+                console.log("tooltipopen",this.getPopup().getContent())
+            })
+
+
+            //zoom空间
+            L.conctrol.zoom({
+                zoomInTitle:'放大',
+                zoomOutTitle:'缩小',
+            }).addTo(mapp)
+
+            //attribution 
+            L.control.attribution({
+                prefix:"Demo",
+                position:'topleft '
+            }).addTo(map)
+
+            //scale
+            L.control.scale({
+                maxWidth: 200,
+                imperial:false,
+                position: 'topright'
+            })
+            //layers 图层控件
+            L.control.layers({
+
+
+            }).addTo(map)
+
+            // layerGroup
+            var img = L.layerGroup ()//多个图层时用  或者   var img = L.layerGroup ()['imgm','imga']
+            var imgm = L.tileLayer('url',{
+                attribution: '',
+                maxZoom: 18,
+                subdomains: ['1','2','3','4']
+            }).addTo(img)
+            var imga = L.tileLayer('url',{
+                attribution: '',
+                maxZoom: 18,
+                subdomains: ['1','2','3','4']
+            }).addTo(img)
+            var baselayer = {
+                "地图":imgm,
+                "影像图":imga
+            }
+
+
+            var marker = L.marker([39.9,116.5748]).addTo(map)
+            var overlays = {
+                "点位": imgm
+            }
+    </script>
+</body>
+</html> 

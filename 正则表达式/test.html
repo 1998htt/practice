@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Title</title>
-    </head>
-    <body>
-        <script>
-            // var reg = /abc/;
-            var str = 'abc';
-            // var reg = str;
-            var reg = new RegExp(str);
-            console.log(reg.exec("dfghjkabc"));
-        </script>
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+        // var reg = /abc/;
+        // var str = 'abc';
+        // // var reg = str;
+        // var reg = new RegExp(str);
+        // console.log(reg.exec("dfghjkabc"));
+          var reg = /^[1][3,4,5,7,8][0-9]{9}$/
+          console.log(reg.test('15590797'))
+
+          var reg = /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/
+          console.log(reg.test('23022319981225232X'))
+
+          var reg = /^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$/
+          console.log(reg.test('130503670401001'))
+
+          var reg = /^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1}$/
+          console.log(reg.test('苏MMA000'))
+
+          var reg = /\w(\.gif|\.jpeg|\.png|\.jpg|\.bmp)/i
+          console.log(reg.test('1_.gif'))
+    </script>
+</body>
+
 </html>

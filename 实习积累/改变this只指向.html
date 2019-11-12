@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1.全局调用 函数名( ) 指向 window
+        2.对象调用 对象.函数名( ) 谁调用指向谁 (.前面是谁就指向谁)
+        3.自执行的函数 指向window
+        4.事件处理函数 指向事件源
+        5.定时器处理函数 指向事件源
+        6.函数定义了未调用的时候指向不确定 -->
+    <script>
+        function fn(x, y) {
+            console.log(this);
+        }
+        var obj = {
+            name: "zs"
+        }
+        fn(1, 2);
+        fn.call(obj, 1, 2);
+
+        let a = 10;
+        function fn1(b) {
+            console.log(this);
+            console.log(b);
+        }
+        fn1.call(a, "gg");
+    </script>
+</body>
+
+</html>

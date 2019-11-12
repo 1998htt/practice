@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    组件内写法:filters:{
+                 filter:function(data,arg1,arg2){
+                 return ....
+                }
+             }
+    全局写法:filters('filter',function(data,arg1,arg2){
+                    retrun ....
+            }
+    在html中使用:{{ msg | filter('arg1','arg2') }}// msg对应函数中的第一个参数data，arg1为第二个参数，类推
+    methods中使用，并传参:methods:{
+                            fn(){
+                                let filter = this.$options.filters['filter']
+                                let data = filter(this.msg,arg1,arg2)
+                            }
+                        }
+    在v-html中使用filters:<p v-html="$options.filters.filter(this.msg,arg1,arg2)"></p>
+</body>
+</html>

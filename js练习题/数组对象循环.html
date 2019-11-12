@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [1,2,4,5];
+        //for循环 可以暂存数组的长度 提高性能
+        var len = arr.length;
+        for(var i=0;i<len;i++){
+            console.log(arr[i])
+        }
+        // foreach 没有返回值 不能break
+        arr.forEach((item,index,arr)=>{
+            console.log(item,index,arr)
+        })
+        //map 有返回值
+        var arr1 = arr.map((item,index)=>{
+            return item
+        })
+        console.log(arr1)
+        // filter 有返回值
+        var arr3 = arr.filter((item,index)=>{
+            return item > 2
+        })
+        console.log(arr3)
+        // for of 没有索引值
+        for(var key of arr) {
+            console.log(key)
+        }
+          // for in 不建议用他循环数组，因为只会循环出下标，还是字符串类型
+          for(var key in arr){
+            console.log(key)
+        }
+        // some有一个是true就是true 否则就是false
+        var arr2 = [{value:1,done:true},
+                    {value:2,done:true},
+                    {value:23,done:false}
+                   ]
+        var bool = arr2.some((item,index)=>{
+            return item.done
+        })
+        console.log(bool)
+        // every有一个是false就是false 否则就是true
+        var bool1 = arr2.every((item,index)=>{
+            return item.done
+        })
+        console.log(bool1)
+        // find找到符合条件的第一个元素，没有返回underfined
+        var find = arr.find((item,index)=>{
+            return item > 5
+        })
+        console.log(find)
+        // findIndex找到符合条件的第一个元素的下标 没有返回-1
+        var findIndex = arr.findIndex((item,index)=>{
+            return item > 4
+        })
+        console.log(findIndex)
+
+        // 性能排序 for forEach map for... of for...in 
+
+        var obj = {
+            a:1,
+            b:2,
+            c:3,
+            d:4
+        }
+        // for...in 自身和继承的
+        for(var key in obj){
+            console.log(key) //a b c d
+            console.log(obj[key]) //1 2 3 4
+        }
+        //输出的是字符串数组
+        console.log(Object.keys(obj))
+        consle.log(Object.values(obj)) 
+        console.log(Object.getOwnPropertyNames(obj))
+        console.log(Object.getOwnPropertySymbols(obj))
+        console.log(Reflect.ownKeys(obj))
+    </script>
+</body>
+</html>
