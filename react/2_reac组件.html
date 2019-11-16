@@ -13,18 +13,23 @@
     <script src="react-dom.development.js"></script>
     <script src="browser.min.js"></script>
     <script type="text/babel">
-        //jsx
+        //jsx es6箭头函数写法 无状态组件
         let Welcome = (props)=>{
             return(
                 <div>
                     <h1>{props.name}</h1>
                     <span>{props.age}</span>
+                    <h3>{props.children}</h3>
                 </div>
 
             );
         }
+
         ReactDOM.render(
-           <Welcome name="唯创" age="9"></Welcome>,
+            <div>
+                <Welcome name="唯创" age="9">htt</Welcome>
+                <Welcome name="唯创" age="9">htt</Welcome>
+            </div>,
             document.getElementById('root')
         );
 
