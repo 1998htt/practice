@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // window对象的URL对象是专门用来将blob或者file读取成一个url的
+
+       // 这个url可以用在html的任何可以使用url的地方，比如img的src ; audio/video的src和source标签等。
+       // 所有能在浏览器中显示的图片、音频、视频等都是可以用url转换成一个url对象的，这个对象一旦被src引用，就会显示出来。
+       // 那么这些file或者blob来自于哪里呢？可以是在本地硬盘中通过<input type='file'>选择的文件，也可以是通过ajax请求后某个不知名的服务器请求到内存的。
+       // 问题： 如果一个img标签的src属性是一个excel文件转换成的url对象，那会发生什么？
+       // 我想img肯定将它读不出来，因为会img标签会检测文件类型。
+        function fn(){
+            window.URL.createObjectURL(file / blob)
+        }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+    <div id="div">
+            <!-- H5拖拽API
+            dragstart：源对象开始拖放。
+            drag：源对象拖放过程中。
+            dragend：源对象拖放结束。
+            dragenter：源对象开始进入过程对象范围内。
+            dragover：源对象在过程对象范围内移动。
+            dragleave：源对象离开过程对象的范围。
+            drop：源对象被拖放到目标对象内。 -->
+        <img style="width:100px;height:100px"
+            src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574163094926&di=757931a31f392930ed2e1794fdc598e3&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201808%2F17%2F20180817002420_fnrch.jpg" 
+            alt="" 
+            draggable="true"
+            v-on:dragstart="faceImgdrag"
+        >
+        <div  v-on:ondragenter="ondragenter"
+              v-on:drop="faceDrop"
+              v-on:dragover="allowDrop"
+              style="width:400px;height:400px;background:#000"
+        >
+
+        </div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+      var vm = new Vue({
+          el:"#div",
+          data:{
+             
+          },
+          methods:{
+            faceImgdrag(){
+                console.log(1111)
+            },
+            ondragenter(){
+                console.log(2222)
+            },
+            faceDrop(){
+                console.log(3333)
+            },
+            allowDrop(){
+                console.log(444)
+            }
+          }
+      })
+    </script>
+    </body>
+</html>

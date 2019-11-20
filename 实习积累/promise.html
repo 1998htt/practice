@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let promise = new Promise(function(resolve,reject){
+        //     setTimeout(()=>{
+        //         reject('fail')
+        //     },5000)
+        // }).then((data)=>{
+        //     console.log(data)
+        // }).catch((data)=>{
+        //     console.log(data)
+        // })
+        console.log(1)
+        let a = new Promise((res,rej) => {
+            console.log(2);
+        });
+        console.log(3);
+        let b = new Promise((res,rej) => {
+            console.log(4);
+        });
+        console.log(5);
+        // class Promise {
+        //     constructor(executor){
+        //         this.status = 'pending',
+        //         this.value = 'underfined'
+        //         this.reason = 'underfined'
+        //         let resolve = (value)=>{
+        //             if(this.status === 'pending'){
+        //                 this.value = value;
+        //                 this.status = 'resolve'
+        //             }
+        //         }
+        //         let reject = (reason)=>{
+        //             if(this.status === 'pending'){
+        //                 this.reason = reason;
+        //                 this.status = 'reject'
+        //             }
+        //         }
+        //         executor(resolve, reject);
+        //     }
+        //     then(onFulfilled, onRejected) { //等同于es5的Promise.prototype.then 当调用then的时候,根据状态，来执行不同的函数
+        //         if (this.status === 'resolved') { //如果状态是resolved
+        //             onFulfilled(this.value); //执行成功的resolve，并将成功后的值传递过去
+        //         }
+        //         if (this.status === 'rejected') { //如果状态是rejected
+        //             onRejected(this.reason); //执行失败的reject,并将失败原因传递过去
+        //         }
+        //     }
+        // }
+    
+    </script>
+</body>
+</html>
