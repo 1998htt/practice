@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      // FormData 对象的使用：
+      // 1.用一些键值对来模拟一系列表单控件：即把form中所有表单元素的name与value组装成
+      // 一个queryString
+      // 2. 异步上传二进制文件。
+      let fd = new FormData(); //前台获取不到 console.log输出不出来
+      fd.append("shopId", this.storeForm.shopId);
+      fd.append("floorNo", this.storeForm.floorNo);
+      fd.append("actualWidth", Number(this.storeForm.actualWidth));
+      fd.append("actualLength", Number(this.storeForm.actualLength));
+      fd.append("imgWidth", Number(this.storeForm.imgWidth));
+      fd.append("imgLength", Number(this.storeForm.imgLength));
+
+      let img = new Img()
+      //必须onload才能获取img的属性 如width，height src等
+      img.onload = ()=>{
+
+      }
+    
+      {
+        path: '/admin/net/device-information-manage',
+        name: 'device-information-manage',
+        component: () => import('@/pages/net/device/device-information-manage'),
+        meta: {
+            title: [ {
+            title: '运营管理 | 设备位置维护',
+            name: '位置管理',
+            url: '/admin/net/device-maintenance' // 切换子路由保持父路由高亮
+            } ],
+            requireAuth: true
+        }
+     }
+    </script>
+</body>
+</html>
