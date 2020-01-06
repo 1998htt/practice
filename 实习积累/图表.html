@@ -1,0 +1,177 @@
+app.title = '坐标轴刻度与标签对齐';
+
+option = {
+    title:{
+        text: '货架利用率',  textAlign: 'center',
+        x:'center'
+    },
+    color: ['#3398DB'],
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis : [
+        {
+            type : 'category',
+            data : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            axisTick: {
+                alignWithLabel: true
+            }
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value',
+            min:93,
+            max:97.5
+        }
+    ],
+    series : [
+        {
+            name:'直接访问',
+            type:'bar',
+            barWidth: '60%',
+            data:[94, 95.5, 96, 96.6, 96.8, 94.5, 93.8]
+        }
+    ]
+};
+
+
+
+
+app.title = '坐标轴刻度与标签对齐';
+
+option = {
+    title:{
+        text: '每层总缺货持续时间', 
+        x:'center'
+    },
+    color: ['#3398DB'],
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis : [
+        {
+            type : 'category',
+            data : ['12/01', '12/06', '12/11', '12/16', '12/21', '12/26', '12/31'],
+            axisTick: {
+                alignWithLabel: true
+            }
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value',
+            min:10,
+            max:0
+        }
+    ],
+    series : [
+        {
+            name:'直接访问',
+            type:'bar',
+            barWidth: '60%',
+            data:[3, 6, 4, 9, 1, 0.2,0.3]
+        }
+    ]
+};
+
+};
+
+
+app.title = '笛卡尔坐标系上的热力图';
+
+var hours = ['12/01', '12/03', '12/05', '12/07', '12/09', '12/11', '12/13',
+        '12/15', '12/17', '12/19','12/21','12/23',
+        '12/25', '12/27', '12/29', '12/31'];
+var days = ['1', '2', '3',
+        '4', '5'];
+
+var data = [[0,0,2],[0,1,2],[0,2,3],[0,3,4],[0,4,6],[0,5,8],[0,6,11],[0,7,12],
+            [0,8,12],[0,9,13],[0,10,14],[0,11,14],[0,12,15],[0,13,16],[0,14,18],[0,15,20],
+            
+            [1,0,4],[1,1,8],[1,2,13],[1,3,16],[1,4,25],[1,5,26],[1,6,33],[1,7,37],
+            [1,8,40],[1,9,48],[1,10,57],[1,11,63],[1,12,65],[1,13,68],[1,14,73],[1,15,80],
+            
+            [2,0,4],[2,1,8],[2,2,13],[2,3,16],[2,4,20],[2,5,21],[2,6,23],[2,7,25],
+            [2,8,26],[2,9,30],[2,10,33],[2,11,35],[2,12,38],[2,13,40],[2,14,43],[2,15,53],
+            
+            [3,0,5],[3,1,8],[3,2,16],[3,3,19],[3,4,20],[3,5,21],[3,6,23],[3,7,25],
+            [3,8,26],[3,9,30],[3,10,30],[3,11,31],[3,12,32],[3,13,32],[3,14,33],[3,15,34],
+            
+            [4,0,4],[4,1,8],[4,2,9],[4,3,10],[4,4,11],[4,5,12],[4,6,13],[4,7,14],
+            [4,8,14],[4,9,15],[4,10,15],[4,11,16],[4,12,16],[4,13,17],[4,14,17],[4,15,17],
+            ]
+data = data.map(function (item) {
+    return [item[1], item[0], item[2] || '-'];
+});
+
+option = {
+    title:{
+        text:'每层随时间推移的缺货持续时间',
+        x:'center',
+    },
+    tooltip: {
+        position: 'top'
+    },
+    animation: false,
+    grid: {
+        height: '50%',
+        y: '10%'
+    },
+    xAxis: {
+        type: 'category',
+        data: hours,
+        splitArea: {
+            show: true
+        }
+    },
+    yAxis: {
+        type: 'category',
+        data: days,
+        splitArea: {
+            show: true
+        }
+    },
+    visualMap: {
+        min: 0,
+        max: 100,
+        calculable: true,
+        orient: 'textVertical',
+        left: 'right',
+        bottom: '70%'
+    },
+    series: [{
+        name: 'Punch Card',
+        type: 'heatmap',
+        data: data,
+        label: {
+            normal: {
+                show: true
+            }
+        },
+        itemStyle: {
+            emphasis: {
+                shadowBlur: 10,
+                shadowColor: 'rgba(0, 0, 0, 0.5)'
+            }
+        }
+    }]
+};

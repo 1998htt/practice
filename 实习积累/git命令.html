@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 从服务端拉取代码到本地并自动合并到本地分支 -->
+    //将新建的文件或者修改过的文件添加到索引库。
+    $ git add . //别忘记有个点，点前面有个空格
+
+    //本地分支代码保存到本地仓库
+    $ git commit -m " 提交的message"
+
+    //查询当前远程的版本
+    $ git remote -v
+
+    //直接拉取并合并最新代码
+    $ git pull origin master [示例1：拉取远端origin/master分支并合并到当前分支]
+    $ git pull origin dev [示例2：拉取远端origin/dev分支并合并到当前分支]
+    注意：
+    1.无法更新的时候可能有冲突，建议删除全部，之后再运行该代码。
+    2.命令行也是要在相应路径下 执行
+
+    <!-- <draggable
+                class="list-group"
+                v-model="listLeft"
+                :options="dragOptions1"
+                :move="onMove"
+                :sort="true"
+                @start="isDragging=true"
+                @end="isDragging=false">
+                <div v-for="(item,key) in listLeft" :key="key">
+                    <img style="width:50px;height:50px"  src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574516818012&di=4a626f74a0cadd1ab3e8b62649398576&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fq_70%2Cc_lfill%2Cw_300%2Ch_200%2Cg_faces%2Fimages%2F20191110%2F060839f546cd4aafb2c545bd5dc09406.jpeg" />
+                    {{item.name}}-{{item.value}}
+                </div>
+            </draggable>
+            <!-- <draggable class="list-group"
+                     element="div"
+                    v-model="listRight"
+                    :options="dragOptions2"
+                    :move="onMove"
+                    @start="isDragging=true"
+                    @end="isDragging=false">
+                    <div v-for="(item,key) in listRight" :key="key">
+                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574516818012&di=4a626f74a0cadd1ab3e8b62649398576&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fq_70%2Cc_lfill%2Cw_300%2Ch_200%2Cg_faces%2Fimages%2F20191110%2F060839f546cd4aafb2c545bd5dc09406.jpeg">
+                        {{item.name}}-{{item.value}}
+                    </div>
+            </draggable> -->
+
+</body>
+
+</html>

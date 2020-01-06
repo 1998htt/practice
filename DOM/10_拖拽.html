@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>Title</title>
         <style>
-            #div1{
+            #div1,#div2{
                 width:200px;
                 height: 200px;
                 background: orange;
@@ -14,6 +14,9 @@
     </head>
 <body>
   <div id="div1">
+
+  </div>
+  <div id="div2"> 
 
   </div>
   <script>
@@ -44,6 +47,37 @@
          oDiv.onmouseup = function(){
             document.onmousemove=null;
              oDiv.style.background='orange';
+         }
+     }
+
+
+     var oDiv2=document.getElementById('div2');
+     oDiv2.onmousedown = function(e){
+         oDiv2.style.background='pink';
+         var l=oDiv2.offsetLeft;
+         var t=oDiv2.offsetTop;
+         var m=e.clientX-l;
+         var n=e.clientY-t;
+         document.onmousemove = function(e) {
+             var aleft=e.clientX-m;
+             var atop=e.clientY-n;
+             if(aleft>document.documentElement.offsetWidth - oDiv.offsetWidth){
+                 aleft=document.documentElement.offsetWidth - oDiv.offsetWidth;
+             }else if(aleft<0){
+                 aleft=0;
+             }
+             if(atop> window.innerHeight - oDiv.offsetHeight){
+                 atop= window.innerHeight - oDiv.offsetHeight;
+             }else if(atop<0){
+                 atop=0;
+             }
+             oDiv2.style.left=aleft+'px';
+             oDiv2.style.top=atop+'px';
+
+         }
+         oDiv2.onmouseup = function(){
+            document.onmousemove=null;
+             oDiv2.style.background='orange';
          }
      }
 

@@ -1,86 +1,81 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
-	<title>通过拖放实现添加删除</title>
-	<style type="text/css">
-		div>div{
-			display: inline-block;
-			padding: 10px;
-			background-color: #aaa;
-			margin: 3px;
+<style type="text/css">
+#div1, #div2,#div3
+{float:left; width:198px; height:66px; margin:10px;padding:10px;border:1px solid #aaaaaa;}
+</style>
+<script  src="jquery.js"></script>
+<script type="text/javascript">
+var  pushArr = new Array();
+//这里需要等待文档加载完成
+window.onload = function(){
+
+	var  test1 = document.getElementById("div1");
+	var  test2 = document.getElementById("div2");
+	var  test3 = document.getElementById("div3");
+	pushArr.push(test1,test2,test3);	
+}
+function allowDrop(ev)
+	{
+		ev.preventDefault();
+	}
+
+	function drag(ev)
+	{
+		console.log(ev);
+		ev.dataTransfer.setData("Text",ev.target.id);
+	}
+
+	function drop(ev)
+	{
+		
+		ev.preventDefault();
+		var data=ev.dataTransfer.getData("Text");
+		console.log(data);
+		console.log(ev.target.id);
+		var  swapFirst,swapSecond;
+		for (var i = 0;i < pushArr.length;i++){
+			if (pushArr[i].id == data){
+					swapFirst = i;
+			}
+			if (pushArr[i].id == ev.target.id){
+					swapSecond = i;
+			}
 		}
-	</style>
+		swapArr(swapFirst,swapSecond,pushArr);
+		
+		reInitAllEle(pushArr);
+	}
+	function  swapArr(first,second,arr){
+		var  temp = pushArr[first];
+		pushArr[first] = pushArr[second];
+		pushArr[second] = temp;
+	}
+	function  reInitAllEle(pushArr){
+			
+			$("#uMain").html('');
+			alert(pushArr.length);
+			for (var i = 0;i < pushArr.length;i++){
+				$("#uMain").append(pushArr[i]);
+			}
+	}
+
+</script>
 </head>
 <body>
-	<!-- 文件所在地 -->
-	<div style="width: 600px;border: 1px solid black;">
-		<h2>可将喜欢的项目拖进收藏夹</h2>
-		<div draggable="true" "dsHandler(event);">疯狂Java联盟</div>
-		<div draggable="true" "dsHandler(event);">疯狂软件教育</div>
-		<div draggable="true" "dsHandler(event);">关于我们</div>
-		<div draggable="true" "dsHandler(event);">疯狂成员</div>
+<div  id = "uMain" >
+	<div id="div1"  "drop(event)" "allowDrop(event)"  draggable="true" "drag(event)" >
+	  <img src="1.png"  width=20px; height = 15px; />
 	</div>
-	<!-- 收藏夹 -->
-	<div id="dest" style="width: 400px;height: 260px;border: 1px solid black;float: left;">
-		<h2 "return false;">收藏夹</h2>
+	<div id="div2" "drop(event)" "allowDrop(event)" draggable="true" "drag(event)" >
+		
 	</div>
-	<!-- 垃圾篓 -->
-	<img id="gb" draggable="false" alt="垃圾篓" src="C:\Users\Administrator\Desktop\timg.jpg" style="float: left;width: 200px;height: 200px;">
+	<div id="div3"   "drop(event)" "allowDrop(event)" draggable="true" "drag(event)" >
+		<img src="1.png"  width=50px; height = 30px; />
+	</div>
+	
+</div>
 
-	<!-- js -->
-	<script type="text/javascript">
-		let dest=document.getElementById("dest");
-		//开始拖动事件的事件监听器
-		let dsHandler=function(event){
-			event.dataTransfer.setData("text/plain","<item>"+event.target.innerHTML);
-		}
-
-		dest.function(event) { 
-			event.preventDefault();
-			let text=event.dataTransfer.getData("text/plain");
-			//如果该text以<item>开头
-			if(text.indexOf("<item>")==0){
-				//创建一个新的div
-				let newEle=document.createElement("div");
-				//以当前事件为该元素生成唯一的ID
-				newEle.id=new Date().getUTCMilliseconds();
-				//该元素内容为“拖”过来的数据
-				newEle.innerHTML=text.substring(6);
-				//设置该元素允许拖动
-				newEle.draggable="true";
-				//为该事件的开始拖动事件指定监听器
-				newEle.function(event){
-					//将被拖动元素的id属性值设置成被拖动的数据
-					event.dataTransfer.setData("text/plain","<remove>"+newEle.id);
-				}
-				dest.appendChild(newEle);
-			}
-		}
-
-		//当把被拖动元素“放”到垃圾篓上时触发该方法
-		document.getElementById("gb").function(event){
-			let id=event.dataTransfer.getData("text/plain");
-			//如果id以<remove>开头
-			if (id.indexOf("<remove>")==0) {
-				//根据“拖”过来的数据，获取被拖动的元素
-				let target=document.getElementById(id.substring(8));
-				//删除被拖动的元素
-				dest.removeChild(target);
-			}
-		}
-
-		//ondragover  被拖动的元素进入本元素的范围内拖动时会不断地触发该事件
-		document.function(event){
-			//取消事件的默认行为
-			return false;
-		}
-
-		//ondrop  其他元素被放到了本元素中时触发该事件
-		document.function(event){
-			//取消事件的默认行为
-			return false;
-		}
-	</script>
 </body>
 </html>
